@@ -206,7 +206,10 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_9__ngx_progressbar_core__["b" /* NgProgressModule */].forRoot(),
                 __WEBPACK_IMPORTED_MODULE_10__ngx_progressbar_router__["a" /* NgProgressRouterModule */],
                 __WEBPACK_IMPORTED_MODULE_3_ngx_disqus__["a" /* DisqusModule */].forRoot('freyes'),
-                __WEBPACK_IMPORTED_MODULE_2__angular_router__["g" /* RouterModule */].forRoot(appRoutes, { enableTracing: true } // <-- debugging purposes only
+                __WEBPACK_IMPORTED_MODULE_2__angular_router__["g" /* RouterModule */].forRoot(appRoutes, {
+                    enableTracing: true,
+                    useHash: true
+                } // <-- debugging purposes only
                 ),
                 __WEBPACK_IMPORTED_MODULE_8_angularfire2_database__["a" /* AngularFireDatabaseModule */],
                 __WEBPACK_IMPORTED_MODULE_5__angular_forms__["h" /* ReactiveFormsModule */],
@@ -968,6 +971,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var ProfileComponent = /** @class */ (function () {
     function ProfileComponent() {
+        // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+        // module.exports = { 
+        //   plugins: [
+        //     new BundleAnalyzerPlugin()
+        //   ]
+        // }
     }
     ProfileComponent.prototype.ngOnInit = function () {
     };
