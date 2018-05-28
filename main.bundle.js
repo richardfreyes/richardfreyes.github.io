@@ -27,7 +27,7 @@ module.exports = ""
 /***/ "./src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<!-- <app-header></app-header> -->\n<ng-progress\n  #progressBar [meteor]=\"options.meteor\"\n  [color]=\"options.color\"\n  [min]=\"options.min\"\n  [speed]=\"options.speed\"\n  [spinner]=\"options.spinner\"\n  [max]=\"options.max\"\n  [spinnerPosition]=\"options.spinnerPosition\"\n  [direction]=\"options.direction\"\n  [thick]=\"options.thick\"\n  [trickleSpeed]=\"options.trickleSpeed\"\n  [ease]=\"options.ease\"\n  (started)=\"onStarted()\"\n  (completed)=\"onCompleted()\">\n</ng-progress>\n<p>Note: This Website is inprogress :)</p>\n<router-outlet></router-outlet>\n<app-footer></app-footer>\n<div id=\"instafeed\"></div>"
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<!-- <app-header></app-header> -->\n<ng-progress\n  #progressBar [meteor]=\"options.meteor\"\n  [color]=\"options.color\"\n  [min]=\"options.min\"\n  [speed]=\"options.speed\"\n  [spinner]=\"options.spinner\"\n  [max]=\"options.max\"\n  [spinnerPosition]=\"options.spinnerPosition\"\n  [direction]=\"options.direction\"\n  [thick]=\"options.thick\"\n  [trickleSpeed]=\"options.trickleSpeed\"\n  [ease]=\"options.ease\"\n  (started)=\"onStarted()\"\n  (completed)=\"onCompleted()\">\n</ng-progress>\n<p class=\"inprogress\">Note: This Website is inprogress :)</p>\n<router-outlet></router-outlet>\n<app-footer></app-footer>\n<div id=\"instafeed\"></div>"
 
 /***/ }),
 
@@ -470,7 +470,7 @@ module.exports = ""
 /***/ "./src/app/components/blog/blog-post/blog-listing/blog-listing.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"section-listing\">\n  <div class=\"section-wrapper s-padding section-i-shadow\">\n    <div class=\"row row-holder\">\n      <div *ngFor=\"let post of posts\" class=\"col-lg-6 col-holder blog-post\">\n        <div class=\"post-holder blog-ftrd-post\">\n          <a [routerLink]=\"[post.slug]\" class=\"post-router\">\n            <div class=\"img-holder\">\n              <img *ngIf=\"post.featured_image\" class=\"featured-img\" src=\"{{post.featured_image}}\" alt=\"featured image\">\n            </div>\n          </a>\n          <div class=\"info-wrapper\">\n            <h1 class=\"post-title\">{{post.title}}</h1>\n            <div class=\"details\">\n              <p class=\"post-date\"><i class=\"fa fa-clock-o\" aria-hidden=\"true\"></i>&nbsp;&nbsp;{{post.published}}</p>\n            </div>\n            <p class=\"post-summary\" [innerHTML]=\"post.summary\"></p>\n            <a [routerLink]=\"[post.slug]\" class=\"read-more\">Read More <i class=\"fa fa-long-arrow-right\" aria-hidden=\"true\"></i></a>\n          </div>\n        </div>\n      </div>\n      <!-- <div class=\"col-lg-4\">\n        <div class=\"sidenav\">\n          <h1>recent posts</h1>\n          <div>\n            {{post.categories}}\n          </div>\n        </div>\n      </div> -->\n      <!-- <app-blog-sidenav></app-blog-sidenav> -->\n    </div>\n    <div class=\"fb-comments\" data-href=\"https://dev-richardfreyes-805dc.firebaseapp.com/blog\" data-width=\"100%\" data-numposts=\"5\"></div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"section-listing\">\n  <div class=\"section-wrapper s-padding section-i-shadow\">\n    <div class=\"row row-holder\">\n      <div *ngFor=\"let post of posts\" class=\"col-lg-6 col-holder blog-post\">\n        <div class=\"post-holder blog-ftrd-post\">\n          <a [routerLink]=\"[post.slug]\" class=\"post-router\">\n            <div class=\"img-holder\">\n              <img *ngIf=\"post.featured_image\" class=\"featured-img\" src=\"{{post.featured_image}}\" alt=\"featured image\">\n            </div>\n          </a>\n          <div class=\"info-wrapper\">\n            <h1 class=\"post-title\">{{post.title}}</h1>\n            <div class=\"details\">\n              <p class=\"post-date\"><i class=\"fa fa-clock-o\" aria-hidden=\"true\"></i>&nbsp;&nbsp;{{post.published}}</p>\n            </div>\n            <p class=\"post-summary\" [innerHTML]=\"post.summary\"></p>\n            <a [routerLink]=\"[post.slug]\" class=\"read-more\">Read More <i class=\"fa fa-long-arrow-right\" aria-hidden=\"true\"></i></a>\n          </div>\n        </div>\n      </div>\n    </div>\n    <!-- <app-disqus></app-disqus> -->\n    <div class=\"fb-comments\" data-href=\"https://dev-richardfreyes-805dc.firebaseapp.com/blog\" data-width=\"100%\" data-numposts=\"5\"></div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -681,7 +681,7 @@ module.exports = ""
 /***/ "./src/app/components/contact/contact.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<main class=\"contact-page\">\n  <div class=\"container\">\n    <div class=\"wrapper\">\n      <header class=\"header\">\n        <div class=\"header-wrapper\">\n          <div class=\"row row-holder contact\">\n            <div class=\"col-9 col-holder p-info-holder\">\n              <div class=\"icon-holder\">\n                <i class=\"fa fa-folder-open-o fa-4x\" aria-hidden=\"true\"></i>\n              </div>\n              <div class=\"label-holder\">\n                <div class=\"inner-holder\">\n                  <h1 class=\"page-title uppercase\">Contact</h1>\n                  <h2 class=\"page-s-title uppercase\">Get in touch with me</h2>\n                </div>\n              </div>\n            </div>\n            <div class=\"col-3 col-holder close-holder\">\n              <a class=\"btn btn-close\" routerLink=\"/\"><span></span></a>\n            </div>\n          </div>\n        </div>\n      </header>\n      <div class=\"section-c-form\">\n        <div class=\"section-wrapper s-padding\">\n          <div class=\"row row-holder\">\n            <div class=\"col-lg-6 col-holder\">\n              <p class=\"section-title uppercase\">Contact info</p>\n              <div class=\"c-info-holder shadow-book\">\n                <table class=\"info-holder\">\n                  <tr>\n                    <td>Name:</td>\n                    <td>Frey Reyes</td>\n                  </tr>\n                  <tr>\n                    <td>Date of birth:</td>\n                    <td>October 27, 19--</td>\n                  </tr>\n                  <tr>\n                    <td>E-mail:</td>\n                    <td><a href=\"#\">richardfrey.reyes@gmail.com</a></td>\n                  </tr>\n                  <tr>\n                    <td>Address:</td>\n                    <td>Philippines</td>\n                  </tr>\n                  <tr>\n                    <td>Phone #:</td>\n                    <td><a href=\"#\">+63956 8555 790</a></td>\n                  </tr>\n                  <tr>\n                    <td>Website:</td>\n                    <td><a href=\"#\">www.freyes.com</a></td>\n                  </tr>\n                </table>\n                <ul class=\"social\">\n                  <li class=\"linkedin\"><a href=\"#\"><i class=\"fa fa-linkedin\" aria-hidden=\"true\"></i></a></li>\n                  <li class=\"facebook\"><a href=\"#\"><i class=\"fa fa-facebook\" aria-hidden=\"true\"></i></a></li>\n                  <li class=\"instagram\"><a href=\"#\"><i class=\"fa fa-instagram\" aria-hidden=\"true\"></i></a></li>\n                  <li class=\"twitter\"><a href=\"#\"><i class=\"fa fa-twitter\" aria-hidden=\"true\"></i></a></li>\n                  <li class=\"skype\"><a href=\"#\"><i class=\"fa fa-skype\" aria-hidden=\"true\"></i></a></li>\n                </ul>\n              </div>\n            </div>\n            <div class=\"col-lg-6 col-holder\">\n              <p class=\"section-title uppercase\">Contact form</p>\n              <div class=\"form-holder shadow-book\">\n                <!-- <form class=\"\" action=\"\" method=\"post\">\n                  <input class=\"email\" type=\"email\" name=\"\" value=\"\" placeholder=\"Your Email\">\n                  <input class=\"fname\" type=\"text\" name=\"\" value=\"\" placeholder=\"First Name\">\n                  <input class=\"l-name\" type=\"text\" name=\"\" value=\"\" placeholder=\"Last Name\">\n                  <textarea name=\"name\" placeholder=\"Message\"></textarea>\n                </form> -->\n\n                <!-- <button type=\"submit\" onclick=\"sendMail()\">test</button> -->\n\n                <!-- <script src=\"https://apps.elfsight.com/p/platform.js\" defer></script>\n                <div class=\"elfsight-app-ba6176ed-a38e-40fd-9df2-40dd7ff3c1b7\"></div> -->\n                <!-- <app-send-email></app-send-email> -->\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n\n      <div class=\"section-map\">\n        <div class=\"section-wrapper s-padding\">\n          <iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61619.49162400498!2d120.52444448491856!3d15.146355401543211!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3396f286eed2e61f%3A0x3ded82248ad9b436!2sAngeles%2C+Pampanga!5e0!3m2!1sen!2sph!4v1520347968982\" height=\"500\" frameborder=\"0\" style=\"border: 0; width: 100%;\" allowfullscreen></iframe>\n        </div>\n      </div>\n    </div>\n  </div>\n</main>\n"
+module.exports = "<main class=\"contact-page\">\n  <div class=\"container\">\n    <div class=\"wrapper\">\n      <header class=\"header\">\n        <div class=\"header-wrapper\">\n          <div class=\"row row-holder contact\">\n            <div class=\"col-9 col-holder p-info-holder\">\n              <div class=\"icon-holder\">\n                <i class=\"fa fa-folder-open-o fa-4x\" aria-hidden=\"true\"></i>\n              </div>\n              <div class=\"label-holder\">\n                <div class=\"inner-holder\">\n                  <h1 class=\"page-title uppercase\">Contact</h1>\n                  <h2 class=\"page-s-title uppercase\">Get in touch with me</h2>\n                </div>\n              </div>\n            </div>\n            <div class=\"col-3 col-holder close-holder\">\n              <a class=\"btn btn-close\" routerLink=\"/\"><span></span></a>\n            </div>\n          </div>\n        </div>\n      </header>\n      <div class=\"section-c-form\">\n        <div class=\"section-wrapper s-padding\">\n          <div class=\"row row-holder\">\n            <div class=\"col-lg-6 col-holder\">\n              <p class=\"section-title uppercase\">Contact info</p>\n              <div class=\"c-info-holder shadow-book\">\n                <table class=\"info-holder\">\n                  <tr>\n                    <td>Name:</td>\n                    <td>Frey Reyes</td>\n                  </tr>\n                  <tr>\n                    <td>Date of birth:</td>\n                    <td>October 27, 19--</td>\n                  </tr>\n                  <tr>\n                    <td>E-mail:</td>\n                    <td><a href=\"#\">richardfrey.reyes@gmail.com</a></td>\n                  </tr>\n                  <tr>\n                    <td>Address:</td>\n                    <td>Philippines</td>\n                  </tr>\n                  <tr>\n                    <td>Phone #:</td>\n                    <td><a href=\"#\">+63956 8555 790</a></td>\n                  </tr>\n                  <tr>\n                    <td>Website:</td>\n                    <td><a href=\"#\">www.freyes.com</a></td>\n                  </tr>\n                </table>\n                <ul class=\"social\">\n                  <li class=\"linkedin\"><a href=\"#\"><i class=\"fa fa-linkedin\" aria-hidden=\"true\"></i></a></li>\n                  <li class=\"facebook\"><a href=\"#\"><i class=\"fa fa-facebook\" aria-hidden=\"true\"></i></a></li>\n                  <li class=\"instagram\"><a href=\"#\"><i class=\"fa fa-instagram\" aria-hidden=\"true\"></i></a></li>\n                  <li class=\"twitter\"><a href=\"#\"><i class=\"fa fa-twitter\" aria-hidden=\"true\"></i></a></li>\n                  <li class=\"skype\"><a href=\"#\"><i class=\"fa fa-skype\" aria-hidden=\"true\"></i></a></li>\n                </ul>\n              </div>\n            </div>\n            <div class=\"col-lg-6 col-holder\">\n              <p class=\"section-title uppercase\">Contact form</p>\n              <div class=\"form-holder shadow-book\">\n                <!-- <app-send-email></app-send-email> -->\n                <!-- <form class=\"\" action=\"\" method=\"post\">\n                  <input class=\"email\" type=\"email\" name=\"\" value=\"\" placeholder=\"Your Email\">\n                  <input class=\"fname\" type=\"text\" name=\"\" value=\"\" placeholder=\"First Name\">\n                  <input class=\"l-name\" type=\"text\" name=\"\" value=\"\" placeholder=\"Last Name\">\n                  <textarea name=\"name\" placeholder=\"Message\"></textarea>\n                </form> -->\n\n                <!-- <button type=\"submit\" onclick=\"sendMail()\">test</button> -->\n\n                <!-- <script src=\"https://apps.elfsight.com/p/platform.js\" defer></script>\n                <div class=\"elfsight-app-ba6176ed-a38e-40fd-9df2-40dd7ff3c1b7\"></div> -->\n                <!-- <app-send-email></app-send-email> -->\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n\n      <div class=\"section-map\">\n        <div class=\"section-wrapper s-padding\">\n          <iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61619.49162400498!2d120.52444448491856!3d15.146355401543211!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3396f286eed2e61f%3A0x3ded82248ad9b436!2sAngeles%2C+Pampanga!5e0!3m2!1sen!2sph!4v1520347968982\" height=\"500\" frameborder=\"0\" style=\"border: 0; width: 100%;\" allowfullscreen></iframe>\n        </div>\n      </div>\n    </div>\n  </div>\n</main>\n"
 
 /***/ }),
 
@@ -706,33 +706,40 @@ var ContactComponent = /** @class */ (function () {
     }
     ContactComponent.prototype.ngOnInit = function () {
         // 'use strict';
-        // let require: any;
         // const nodemailer = require('nodemailer');
-        // const xoauth2 = require('xoauth2');
-        // let transporter = nodemailer.createTransport({
-        //   service: 'gmail',
-        //   auth: {
-        //       type: 'OAuth2', 
-        //       user: 'dev.richardfreyes@gmail.com',
-        //       clientId: '317997695044-mkuu1tcitpo9d4vvvcbneq4tqt7js9ma.apps.googleusercontent.com',
-        //       clientSecret: 'SY0-PcF2RehVjVz0Q2icZ0Ez',
-        //       refreshToken: '1/FFbKQN40_xr7fyvqcNjAOtCyn_OlW6DEYsAmqriwghY',
-        //       accessToken: 'ya29.GludBbMCzzdw8OC0ChVq3hK4NdmnGDbz3Ydm8StMnaaMfQXAB-dFpSg14VKVdA2ij4w0PRslqGzNch984Wk5Qk7XJC-ZOc4d0SXFFgLZXmJeKNH6d-pdxEZAgu9X'
-        //   }
-        // })
-        // let mailOptions = {
-        //   from: 'FReyes <dev.richardfreyes@gmail.com>',
-        //   to: 'd102791estiny@gmail.com',
-        //   subject: 'Nodemailer test',
-        //   text: 'Hello World!!'
-        // }
-        // transporter.sendMail(mailOptions, function (err, res) {
-        //   if(err){
-        //       console.log('Error');
-        //   } else {
-        //       console.log('Email Sent');
-        //   }
-        // })
+        // // Generate test SMTP service account from ethereal.email
+        // // Only needed if you don't have a real mail account for testing
+        // nodemailer.createTestAccount((err, account) => {
+        //     // create reusable transporter object using the default SMTP transport
+        //     let transporter = nodemailer.createTransport({
+        //         host: 'smtp.ethereal.email',
+        //         port: 587,
+        //         secure: false, // true for 465, false for other ports
+        //         auth: {
+        //             user: account.user, // generated ethereal user
+        //             pass: account.pass // generated ethereal password
+        //         }
+        //     });
+        //     // setup email data with unicode symbols
+        //     let mailOptions = {
+        //         from: '"Fred Foo 👻" <foo@example.com>', // sender address
+        //         to: 'bar@example.com, baz@example.com', // list of receivers
+        //         subject: 'Hello ✔', // Subject line
+        //         text: 'Hello world?', // plain text body
+        //         html: '<b>Hello world?</b>' // html body
+        //     };
+        //     // send mail with defined transport object
+        //     transporter.sendMail(mailOptions, (error, info) => {
+        //         if (error) {
+        //             return console.log(error);
+        //         }
+        //         console.log('Message sent: %s', info.messageId);
+        //         // Preview only available when sending through an Ethereal account
+        //         console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+        //         // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+        //         // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
+        //     });
+        // });
     };
     ContactComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -759,7 +766,7 @@ module.exports = ""
 /***/ "./src/app/components/footer/footer.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<footer class=\"footer\">\n  <div class=\"container\">\n    <div class=\"footer-wrapper s-padding\">\n      <div class=\"row row-holder\">\n        <div class=\"col-12 col-xl-3 col-holder\">\n          <div class=\"f-social\">\n            <a href=\"#\">\n              <div class=\"icon-holder\">\n                <i class=\"fa fa-phone\" aria-hidden=\"true\"></i>\n              </div>\n              <span class=\"text\">+63956 8555 790</span>\n            </a>\n          </div>\n        </div>\n        <div class=\"col-12 col-xl-3 col-holder\">\n          <div class=\"f-social\">\n            <a href=\"#\">\n              <div class=\"icon-holder\">\n                <i class=\"fa fa-paper-plane\" aria-hidden=\"true\"></i>\n              </div>\n              <span class=\"text\">richardfrey.reyes@gmail.com</span>\n            </a>\n          </div>\n        </div>\n        <div class=\"col-12 col-xl-3 col-holder\">\n          <!-- <div class=\"f-social\">\n            <a href=\"#\">\n              <div class=\"icon-holder\">\n                <i class=\"fa fa-map-marker\" aria-hidden=\"true\"></i>\n              </div>\n              <span class=\"text\">Angeles City Pampanga</span>\n            </a>\n          </div> -->\n          <p class=\"credits\">Blog Engine Powered by - <a href=\"https://buttercms.com/\" target=\"_blank\"><img src=\"assets/images/footer/logo-buttercms.svg\" alt=\"butterCMS\"></a></p>\n        </div>\n        <div class=\"col-12 col-xl-3 col-holder\">\n          <p class=\"copyright\">Copyright © 2018 Frey Reyes - Web Developer.</p>\n        </div>\n      </div>\n    </div>\n  </div>\n</footer>\n"
+module.exports = "<footer class=\"footer\">\n  <div class=\"container\">\n    <div class=\"footer-wrapper s-padding\">\n      <div class=\"row row-holder\">\n        <div class=\"col-12 col-xl-3 col-holder\">\n          <div class=\"f-social\">\n            <a href=\"tel:09568555790\">\n              <div class=\"icon-holder\">\n                <i class=\"fa fa-phone\" aria-hidden=\"true\"></i>\n              </div>\n              <span class=\"text\">+63956 8555 790</span>\n            </a>\n          </div>\n        </div>\n        <div class=\"col-12 col-xl-3 col-holder\">\n          <div class=\"f-social\">\n            <a href=\"mailto:richardfrey.reyes@gmail.com\">\n              <div class=\"icon-holder\">\n                <i class=\"fa fa-paper-plane\" aria-hidden=\"true\"></i>\n              </div>\n              <span class=\"text\">richardfrey.reyes@gmail.com</span>\n            </a>\n          </div>\n        </div>\n        <div class=\"col-12 col-xl-3 col-holder\">\n          <!-- <div class=\"f-social\">\n            <a href=\"#\">\n              <div class=\"icon-holder\">\n                <i class=\"fa fa-map-marker\" aria-hidden=\"true\"></i>\n              </div>\n              <span class=\"text\">Angeles City Pampanga</span>\n            </a>\n          </div> -->\n          <p class=\"credits\">Blog Engine Powered by - <a href=\"https://buttercms.com/\" target=\"_blank\"><img src=\"assets/images/footer/logo-buttercms.svg\" alt=\"butterCMS\"></a></p>\n        </div>\n        <div class=\"col-12 col-xl-3 col-holder\">\n          <p class=\"copyright\">Copyright © 2018 Frey Reyes - Web Developer.</p>\n        </div>\n      </div>\n    </div>\n  </div>\n</footer>\n"
 
 /***/ }),
 
@@ -968,7 +975,7 @@ module.exports = ""
 /***/ "./src/app/components/profile/profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<main class=\"profile-page\">\n  <div class=\"container\">\n    <div class=\"wrapper\">\n      <header class=\"header\">\n        <div class=\"header-wrapper\">\n          <div class=\"row row-holder profile\">\n            <div class=\"col-9 col-holder p-info-holder\">\n              <div class=\"icon-holder\">\n                <i class=\"fa fa-user-circle-o fa-4x\" aria-hidden=\"true\"></i>\n              </div>\n              <div class=\"label-holder\">\n                <div class=\"inner-holder\">\n                  <h1 class=\"page-title uppercase\">Profile</h1>\n                  <h2 class=\"page-s-title uppercase\">A Brief About Me</h2>\n                </div>\n              </div>\n            </div>\n            <div class=\"col-3 col-holder close-holder\">\n              <a class=\"btn btn-close\" routerLink=\"/\"><span></span></a>\n            </div>\n          </div>\n        </div>\n      </header>\n      <div class=\"section-about\">\n        <div class=\"section-wrapper s-padding\">\n          <div class=\"row row-holder\">\n            <div class=\"col-12 col-xl-7 col-holder left\">\n              <div class=\"text-holder\">\n                <p class=\"section-title uppercase\">hello, i am a Web Developer</p>\n                <p class=\"desc shadow-book\">\n                  I hold a degree of Bachelor of Science in Computer Science and 2yrs Computer Programming from St. Nicolas College of Bussiness and Technology San Fernando Pampanga Philippines. Web development is my profession. I am highly skilled with Front-End Development. I have over 1 year of experience with this development, and I am eager to learn even more technologies to sharpen my skillset. In addition to web technologies, I do have interested for mobile application development technologies as well.\n                </p>\n              </div>\n            </div>\n            <div class=\"col-12 col-xl-5 col-holder right\">\n              <table class=\"info-holder shadow-book\">\n                <tr>\n                  <td>Name:</td>\n                  <td>Frey Reyes</td>\n                </tr>\n                <tr>\n                  <td>Date of birth:</td>\n                  <td>October 27, 199-</td>\n                </tr>\n                <tr>\n                  <td>E-mail:</td>\n                  <td><a href=\"#\">richardfrey.reyes@gmail.com</a></td>\n                </tr>\n                <tr>\n                  <td>Address:</td>\n                  <td>Philippines</td>\n                </tr>\n                <tr>\n                  <td>Phone #:</td>\n                  <td><a href=\"#\">+63956 8555 790</a></td>\n                </tr>\n                <tr>\n                  <td>Website:</td>\n                  <td><a href=\"#\">www.freyes.com</a></td>\n                </tr>\n              </table>\n            </div>\n          </div>\n        </div>\n      </div>\n\n      <div class=\"section-ump\">\n        <div class=\"section-wrapper s-padding\">\n          <div class=\"content-holder\">\n            <p class=\"section-title uppercase\">understanding my passion</p>\n            <p class=\"desc\">There's something to be said about working with passionate that truly love what they do. I'm no different. I honestly enjoy coming to work everyday to explore something new, to expand my knowledge and to enhance my skillset.</p>\n          </div>\n        </div>\n      </div>\n\n      <div class=\"section-instagram\">\n        <div class=\"section-wrapper s-padding\">\n          <div class=\"content-holder\">\n            <div class=\"hide-element\"></div>   \n            <div class=\"elfsight-app-8a573dd9-052e-41a0-9480-49d0d1b7310b\" onload=\"onLoad()\"></div>\n            <!-- <div class='sk-instagram-feed' data-embed-id='9222'></div> -->\n          </div>\n        </div>\n      </div>\n\n      <div class=\"section-hobbies\">\n        <div class=\"section-wrapper s-padding\">\n          <p class=\"section-title uppercase\">Hobbies & Interest</p>\n          <div class=\"row row-holder featured-orbs\">\n            <div class=\"col col-lg-2 col-holder\">\n              <div class=\"icon-holder\">\n                <i class=\"fa fa-globe fa-3x\" aria-hidden=\"true\"></i>\n              </div>\n              <p class=\"label uppercase\">Web Technologies</p>\n            </div>\n            <div class=\"col col-lg-2 col-holder\">\n              <div class=\"icon-holder\">\n                <i class=\"fa fa-mobile fa-3x\" aria-hidden=\"true\"></i>\n              </div>\n              <p class=\"label uppercase\">Gadgets</p>\n            </div>\n            <div class=\"col col-lg-2 col-holder\">\n              <div class=\"icon-holder\">\n                <i class=\"fa fa-gamepad fa-3x\" aria-hidden=\"true\"></i>\n              </div>\n              <p class=\"label uppercase\">Online Games</p>\n            </div>\n            <div class=\"col col-lg-2 col-holder\">\n              <div class=\"icon-holder\">\n                <i class=\"fa fa-motorcycle fa-3x\" aria-hidden=\"true\"></i>\n              </div>\n              <p class=\"label uppercase\">Motorcycles</p>\n            </div>\n            <div class=\"col col-lg-2 col-holder\">\n              <div class=\"icon-holder\">\n                <i class=\"fa fa-car fa-3x\" aria-hidden=\"true\"></i>\n              </div>\n              <p class=\"label uppercase\">Cars</p>\n            </div>\n            <div class=\"col col-lg-2 col-holder\">\n              <div class=\"icon-holder\">\n                <i class=\"fa fa-circle fa-3x\" aria-hidden=\"true\"></i>\n              </div>\n              <p class=\"label uppercase\">Basketball</p>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</main>\n"
+module.exports = "<main class=\"profile-page\">\n  <div class=\"container\">\n    <div class=\"wrapper\">\n      <header class=\"header\">\n        <div class=\"header-wrapper\">\n          <div class=\"row row-holder profile\">\n            <div class=\"col-9 col-holder p-info-holder\">\n              <div class=\"icon-holder\">\n                <i class=\"fa fa-user-circle-o fa-4x\" aria-hidden=\"true\"></i>\n              </div>\n              <div class=\"label-holder\">\n                <div class=\"inner-holder\">\n                  <h1 class=\"page-title uppercase\">Profile</h1>\n                  <h2 class=\"page-s-title uppercase\">A Brief About Me</h2>\n                </div>\n              </div>\n            </div>\n            <div class=\"col-3 col-holder close-holder\">\n              <a class=\"btn btn-close\" routerLink=\"/\"><span></span></a>\n            </div>\n          </div>\n        </div>\n      </header>\n      <div class=\"section-about\">\n        <div class=\"section-wrapper s-padding\">\n          <div class=\"row row-holder\">\n            <div class=\"col-12 col-xl-7 col-holder left\">\n              <div class=\"text-holder\">\n                <p class=\"section-title uppercase\">hello, i am a Web Developer</p>\n                <p class=\"desc shadow-book\">\n                  I hold a degree of Bachelor of Science in Computer Science and 2yrs Computer Programming from St. Nicolas College of Bussiness and Technology San Fernando Pampanga Philippines. Web development is my profession. I am highly skilled with Front-End Development. I have over 1 year of experience with this development, and I am eager to learn even more technologies to sharpen my skillset. In addition to web technologies, I do have interested for mobile application development technologies as well.\n                </p>\n              </div>\n            </div>\n            <div class=\"col-12 col-xl-5 col-holder right\">\n              <table class=\"info-holder shadow-book\">\n                <tr>\n                  <td>Name:</td>\n                  <td>Frey Reyes</td>\n                </tr>\n                <tr>\n                  <td>Date of birth:</td>\n                  <td>October 27, 199-</td>\n                </tr>\n                <tr>\n                  <td>E-mail:</td>\n                  <td><a href=\"#\">richardfrey.reyes@gmail.com</a></td>\n                </tr>\n                <tr>\n                  <td>Address:</td>\n                  <td>Philippines</td>\n                </tr>\n                <tr>\n                  <td>Phone #:</td>\n                  <td><a href=\"#\">+63956 8555 790</a></td>\n                </tr>\n                <tr>\n                  <td>Website:</td>\n                  <td><a href=\"#\">www.freyes.com</a></td>\n                </tr>\n              </table>\n            </div>\n          </div>\n        </div>\n      </div>\n\n      <div class=\"section-ump\">\n        <div class=\"section-wrapper s-padding\">\n          <div class=\"content-holder\">\n            <p class=\"section-title uppercase\">understanding my passion</p>\n            <p class=\"desc\">There's something to be said about working with passionate that truly love what they do. I'm no different. I honestly enjoy coming to work everyday to explore something new, to expand my knowledge and to enhance my skillset.</p>\n          </div>\n        </div>\n      </div>\n\n      <div class=\"section-instagram\">\n        <div class=\"section-wrapper s-padding\">\n          <div class=\"content-holder\">\n            <div class=\"hide-element\"></div>   \n            <div class=\"elfsight-app-8a573dd9-052e-41a0-9480-49d0d1b7310b\" async></div>\n            <!-- <div class='sk-instagram-feed' data-embed-id='9222'></div> -->\n          </div>\n        </div>\n      </div>\n\n      <div class=\"section-hobbies\">\n        <div class=\"section-wrapper s-padding\">\n          <p class=\"section-title uppercase\">Hobbies & Interest</p>\n          <div class=\"row row-holder featured-orbs\">\n            <div class=\"col col-lg-2 col-holder\">\n              <div class=\"icon-holder\">\n                <i class=\"fa fa-globe fa-3x\" aria-hidden=\"true\"></i>\n              </div>\n              <p class=\"label uppercase\">Web Technologies</p>\n            </div>\n            <div class=\"col col-lg-2 col-holder\">\n              <div class=\"icon-holder\">\n                <i class=\"fa fa-mobile fa-3x\" aria-hidden=\"true\"></i>\n              </div>\n              <p class=\"label uppercase\">Gadgets</p>\n            </div>\n            <div class=\"col col-lg-2 col-holder\">\n              <div class=\"icon-holder\">\n                <i class=\"fa fa-gamepad fa-3x\" aria-hidden=\"true\"></i>\n              </div>\n              <p class=\"label uppercase\">Online Games</p>\n            </div>\n            <div class=\"col col-lg-2 col-holder\">\n              <div class=\"icon-holder\">\n                <i class=\"fa fa-motorcycle fa-3x\" aria-hidden=\"true\"></i>\n              </div>\n              <p class=\"label uppercase\">Motorcycles</p>\n            </div>\n            <div class=\"col col-lg-2 col-holder\">\n              <div class=\"icon-holder\">\n                <i class=\"fa fa-car fa-3x\" aria-hidden=\"true\"></i>\n              </div>\n              <p class=\"label uppercase\">Cars</p>\n            </div>\n            <div class=\"col col-lg-2 col-holder\">\n              <div class=\"icon-holder\">\n                <i class=\"fa fa-circle fa-3x\" aria-hidden=\"true\"></i>\n              </div>\n              <p class=\"label uppercase\">Basketball</p>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</main>\n"
 
 /***/ }),
 
@@ -990,17 +997,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var ProfileComponent = /** @class */ (function () {
     function ProfileComponent() {
-        // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-        // module.exports = { 
-        //   plugins: [
-        //     new BundleAnalyzerPlugin()
-        //   ]
-        // }    
     }
     ProfileComponent.prototype.ngOnInit = function () {
-        function onLoad() {
-            document.getElementsByClassName('elfsight-app-8a573dd9-052e-41a0-9480-49d0d1b7310b');
+        function load_js() {
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.src = 'https://apps.elfsight.com/p/platform.js';
+            head.appendChild(script);
         }
+        load_js();
     };
     ProfileComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -1077,7 +1082,7 @@ module.exports = ""
 /***/ "./src/app/send-email/send-email.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<form action=\"\">\n  <!-- <input type=\"text\" placeholder=\"subject\">\n  <input type=\"email\" placeholder=\"email\">\n  <textarea placeholder=\"message\" name=\"\" id=\"\" cols=\"30\" rows=\"10\"></textarea> -->\n  <button (click)=\"sendEmail()\">Test Send Email</button>\n</form>"
+module.exports = "<form action=\"\">\n  <!-- <input type=\"text\" placeholder=\"subject\">\n  <input type=\"email\" placeholder=\"email\">\n  <textarea placeholder=\"message\" name=\"\" id=\"\" cols=\"30\" rows=\"10\"></textarea> -->\n  <button (click)=\"sendEmail()\">Send Email</button>\n</form>"
 
 /***/ }),
 
@@ -1087,9 +1092,7 @@ module.exports = "<form action=\"\">\n  <!-- <input type=\"text\" placeholder=\"
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SendEmailComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("./node_modules/@angular/http/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/toPromise.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1101,27 +1104,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
 var SendEmailComponent = /** @class */ (function () {
     function SendEmailComponent(http) {
         this.http = http;
+        this.endpoint = 'https://us-central1-dev-richardfreyes.cloudfunctions.net/httpEmail';
     }
     SendEmailComponent.prototype.sendEmail = function () {
-        var url = "https://us-central1-dev-richardfreyes-805dc.cloudfunctions.net/httpEmail";
-        var params = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* URLSearchParams */]();
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
-        params.set('to', 'dev-richardfreyes@gmail.com');
-        params.set('from', 'd102791estiny@gmail.com');
-        params.set('subject', 'test-email');
-        params.set('content', 'Hello World');
-        return this.http.post(url, params, { headers: headers })
-            .toPromise()
-            .then(function (res) {
-            console.log(res);
-        })
-            .catch(function (err) {
-            console.log(err);
-        });
+        var data = {
+            toEmail: 'dev.richardfreyes@gmail.com',
+            toName: 'Jeff Delaney'
+        };
+        this.http.post(this.endpoint, data).subscribe();
     };
     SendEmailComponent.prototype.ngOnInit = function () {
     };
@@ -1131,7 +1124,7 @@ var SendEmailComponent = /** @class */ (function () {
             template: __webpack_require__("./src/app/send-email/send-email.component.html"),
             styles: [__webpack_require__("./src/app/send-email/send-email.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
     ], SendEmailComponent);
     return SendEmailComponent;
 }());
