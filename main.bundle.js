@@ -725,7 +725,7 @@ var ContactComponent = /** @class */ (function () {
                 'Name:' + this.name +
                 'Message:' + this.message
         };
-        return this.http.post('https://richardfreyes.github.io:3000/api/mail/contact', data, { headers: new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set('Content-Type', 'application/json'),
+        return this.http.post('localhost:3000/api/mail/contact', data, { headers: new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set('Content-Type', 'application/json'),
             responseType: 'text' }).subscribe(function (data) {
             window.setTimeout(function () {
                 _this.successMsg = true;
