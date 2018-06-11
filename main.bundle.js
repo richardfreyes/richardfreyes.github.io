@@ -27,7 +27,7 @@ module.exports = ""
 /***/ "./src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<!-- <app-header></app-header> -->\n<ng-progress\n  #progressBar [meteor]=\"options.meteor\"\n  [color]=\"options.color\"\n  [min]=\"options.min\"\n  [speed]=\"options.speed\"\n  [spinner]=\"options.spinner\"\n  [max]=\"options.max\"\n  [spinnerPosition]=\"options.spinnerPosition\"\n  [direction]=\"options.direction\"\n  [thick]=\"options.thick\"\n  [trickleSpeed]=\"options.trickleSpeed\"\n  [ease]=\"options.ease\"\n  (started)=\"onStarted()\"\n  (completed)=\"onCompleted()\">\n</ng-progress>\n<div class=\"spacer\"></div>\n<p class=\"inprogress\">Note: This Website is inprogress :)</p>\n<router-outlet></router-outlet>\n<app-footer></app-footer>\n<div id=\"instafeed\"></div>\n"
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<!-- <app-header></app-header> -->\n<ng-progress\n  #progressBar [meteor]=\"options.meteor\"\n  [color]=\"options.color\"\n  [min]=\"options.min\"\n  [speed]=\"options.speed\"\n  [spinner]=\"options.spinner\"\n  [max]=\"options.max\"\n  [spinnerPosition]=\"options.spinnerPosition\"\n  [direction]=\"options.direction\"\n  [thick]=\"options.thick\"\n  [trickleSpeed]=\"options.trickleSpeed\"\n  [ease]=\"options.ease\"\n  (started)=\"onStarted()\"\n  (completed)=\"onCompleted()\">\n</ng-progress>\n<!-- <div class=\"spacer\"></div>\n<p class=\"inprogress\">Note: This Website is inprogress :)</p> -->\n<router-outlet></router-outlet>\n<app-footer></app-footer>\n"
 
 /***/ }),
 
@@ -198,7 +198,7 @@ var AppModule = /** @class */ (function () {
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_20_ngx_owl_carousel__["OwlModule"],
-                __WEBPACK_IMPORTED_MODULE_5__angular_forms__["c" /* FormsModule */],
+                __WEBPACK_IMPORTED_MODULE_5__angular_forms__["d" /* FormsModule */],
                 __WEBPACK_IMPORTED_MODULE_25__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
                 __WEBPACK_IMPORTED_MODULE_26__angular_common_http__["b" /* HttpClientModule */],
                 __WEBPACK_IMPORTED_MODULE_24__components_blog_shared__["a" /* AppMaterialModule */],
@@ -211,7 +211,7 @@ var AppModule = /** @class */ (function () {
                     useHash: true
                 }),
                 __WEBPACK_IMPORTED_MODULE_8_angularfire2_database__["a" /* AngularFireDatabaseModule */],
-                __WEBPACK_IMPORTED_MODULE_5__angular_forms__["h" /* ReactiveFormsModule */],
+                __WEBPACK_IMPORTED_MODULE_5__angular_forms__["i" /* ReactiveFormsModule */],
                 __WEBPACK_IMPORTED_MODULE_6_angularfire2__["a" /* AngularFireModule */].initializeApp(__WEBPACK_IMPORTED_MODULE_7__environments_environment__["a" /* environment */].firebase)
             ],
             providers: [],
@@ -681,7 +681,7 @@ module.exports = ""
 /***/ "./src/app/components/contact/contact.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<main class=\"contact-page\">\n  <div class=\"container\">\n    <div class=\"wrapper\">\n      <header class=\"header\">\n        <div class=\"header-wrapper\">\n          <div class=\"row row-holder contact\">\n            <div class=\"col-9 col-holder p-info-holder\">\n              <div class=\"icon-holder\">\n                <i class=\"fa fa-folder-open-o fa-4x\" aria-hidden=\"true\"></i>\n              </div>\n              <div class=\"label-holder\">\n                <div class=\"inner-holder\">\n                  <h1 class=\"page-title uppercase\">Contact</h1>\n                  <h2 class=\"page-s-title uppercase\">Get in touch with me</h2>\n                </div>\n              </div>\n            </div>\n            <div class=\"col-3 col-holder close-holder\">\n              <a class=\"btn btn-close\" routerLink=\"/\"><span></span></a>\n            </div>\n          </div>\n        </div>\n      </header>\n      <div class=\"section-c-form\">\n        <div class=\"section-wrapper s-padding\">\n          <div class=\"row row-holder\">\n            <div class=\"col-lg-6 col-holder\">\n              <p class=\"section-title uppercase\">Contact info</p>\n              <div class=\"c-info-holder shadow-book\">\n                <table class=\"info-holder\">\n                  <tr>\n                    <td>Name:</td>\n                    <td>Frey Reyes</td>\n                  </tr>\n                  <tr>\n                    <td>Date of birth:</td>\n                    <td>October 27, 199-</td>\n                  </tr>\n                  <tr>\n                    <td>E-mail:</td>\n                    <td><a href=\"mailto:richardfrey.reyes@gmail.com\">richardfrey.reyes@gmail.com</a></td>\n                  </tr>\n                  <tr>\n                    <td>Address:</td>\n                    <td>Philippines</td>\n                  </tr>\n                  <tr>\n                    <td>Phone #:</td>\n                    <td><a href=\"tel:09568555790\">+63956 8555 790</a></td>\n                  </tr>\n                  <tr>\n                    <td>Website:</td>\n                    <td><a href=\"https://richardfreyes.github.io\" target=\"_blank\">richardfreyes.github.io</a></td>\n                  </tr>\n                </table>\n                <ul class=\"social\">\n                  <li class=\"linkedin\"><a href=\"https://linkedin.com/in/richard-frey-reyes-1a92b6117\" target=\"_blank\"><i class=\"fa fa-linkedin\" aria-hidden=\"true\"></i></a></li>\n                  <li class=\"facebook\"><a href=\"https://www.facebook.com/richardfrey.reyes.5\" target=\"_blank\"><i class=\"fa fa-facebook\" aria-hidden=\"true\"></i></a></li>\n                  <li class=\"instagram\"><a href=\"https://www.instagram.com/iifreyes/\" target=\"_blank\"><i class=\"fa fa-instagram\" aria-hidden=\"true\"></i></a></li>\n                  <li class=\"twitter\"><a href=\"https://twitter.com/d102791estiny\" target=\"_blank\"><i class=\"fa fa-twitter\" aria-hidden=\"true\"></i></a></li>\n                  <li class=\"skype\"><a href=\"https://api.whatsapp.com/send?phone=09568555790\" target=\"_blank\"><i class=\"fa fa-whatsapp\" aria-hidden=\"true\"></i></a></li>\n                </ul>\n              </div>\n            </div>\n            <div class=\"col-lg-6 col-holder\">\n              <p class=\"section-title uppercase\">Contact form</p>\n              <div class=\"form-holder shadow-book\">\n                <!-- <app-send-email></app-send-email> -->\n                <!-- <form>\n                  <input class=\"email\" type=\"email\" ngModel name=\"email\" placeholder=\"Your Email\" required>\n                  <input class=\"fname\" type=\"text\" ngModel name=\"fname\" placeholder=\"First Name\" required>\n                  <input class=\"l-name\" type=\"text\" ngModel name=\"lname\" placeholder=\"Last Name\" required>\n                  <textarea name=\"message\" ngModel placeholder=\"Message\" required ></textarea>\n                  <button>Send Message</button>\n                </form> -->\n\n                <input type=\"button\" value=\"test\" (click)=\"test()\">\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n\n      <div class=\"section-map\">\n        <div class=\"section-wrapper s-padding\">\n          <iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61619.49162400498!2d120.52444448491856!3d15.146355401543211!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3396f286eed2e61f%3A0x3ded82248ad9b436!2sAngeles%2C+Pampanga!5e0!3m2!1sen!2sph!4v1520347968982\" height=\"500\" frameborder=\"0\" style=\"border: 0; width: 100%;\" allowfullscreen></iframe>\n        </div>\n      </div>\n    </div>\n  </div>\n</main>\n"
+module.exports = "<main class=\"contact-page\">\n  <div class=\"container\">\n    <div class=\"wrapper\">\n      <header class=\"header\">\n        <div class=\"header-wrapper\">\n          <div class=\"row row-holder contact\">\n            <div class=\"col-9 col-holder p-info-holder\">\n              <div class=\"icon-holder\">\n                <i class=\"fa fa-folder-open-o fa-4x\" aria-hidden=\"true\"></i>\n              </div>\n              <div class=\"label-holder\">\n                <div class=\"inner-holder\">\n                  <h1 class=\"page-title uppercase\">Contact</h1>\n                  <h2 class=\"page-s-title uppercase\">Get in touch with me</h2>\n                </div>\n              </div>\n            </div>\n            <div class=\"col-3 col-holder close-holder\">\n              <a class=\"btn btn-close\" routerLink=\"/\"><span></span></a>\n            </div>\n          </div>\n        </div>\n      </header>\n      <div class=\"section-c-form\">\n        <div class=\"section-wrapper s-padding\">\n          <div class=\"row row-holder\">\n            <div class=\"col-lg-6 col-holder contact-info\">\n              <p class=\"section-title uppercase\">Contact info</p>\n              <div class=\"c-info-holder shadow-book\">\n                <table class=\"info-holder\">\n                  <tr>\n                    <td>Name:</td>\n                    <td>Frey Reyes</td>\n                  </tr>\n                  <tr>\n                    <td>Date of birth:</td>\n                    <td>October 27, 199-</td>\n                  </tr>\n                  <tr>\n                    <td>E-mail:</td>\n                    <td><a href=\"mailto:richardfrey.reyes@gmail.com\">richardfrey.reyes@gmail.com</a></td>\n                  </tr>\n                  <tr>\n                    <td>Address:</td>\n                    <td>Philippines</td>\n                  </tr>\n                  <tr>\n                    <td>Phone #:</td>\n                    <td><a href=\"tel:09568555790\">+63956 8555 790</a></td>\n                  </tr>\n                  <tr>\n                    <td>Website:</td>\n                    <td><a href=\"https://richardfreyes.github.io\" target=\"_blank\">richardfreyes.github.io</a></td>\n                  </tr>\n                </table>\n                <ul class=\"social\">\n                  <li class=\"linkedin\"><a href=\"https://linkedin.com/in/richard-frey-reyes-1a92b6117\" target=\"_blank\"><i class=\"fa fa-linkedin\" aria-hidden=\"true\"></i></a></li>\n                  <li class=\"facebook\"><a href=\"https://www.facebook.com/richardfrey.reyes.5\" target=\"_blank\"><i class=\"fa fa-facebook\" aria-hidden=\"true\"></i></a></li>\n                  <li class=\"instagram\"><a href=\"https://www.instagram.com/iifreyes/\" target=\"_blank\"><i class=\"fa fa-instagram\" aria-hidden=\"true\"></i></a></li>\n                  <li class=\"twitter\"><a href=\"https://twitter.com/d102791estiny\" target=\"_blank\"><i class=\"fa fa-twitter\" aria-hidden=\"true\"></i></a></li>\n                  <li class=\"skype\"><a href=\"https://api.whatsapp.com/send?phone=09568555790\" target=\"_blank\"><i class=\"fa fa-whatsapp\" aria-hidden=\"true\"></i></a></li>\n                </ul>\n              </div>\n            </div>\n            <div class=\"col-lg-6 col-holder contact-form\">\n              <p class=\"section-title uppercase\">Contact form</p>\n              <div class=\"form-holder shadow-book\">\n                <form [formGroup]=\"form\">\n                  <!-- <input formControlName=\"firstName\" [(ngModel)]=\"firstName\"> -->\n                  <input class=\"email\" type=\"email\" formControlName=\"email\" ngModel name=\"email\" [(ngModel)]=\"email\" value=\"{{ email }}\" placeholder=\"Your Email*\">\n                  <div class=\"alert\" *ngIf=\"!form.controls['email'].valid && (form.controls['email'].touched)\">\n                    <div [hidden]=\"!form.controls['email'].errors.required\">\n                      Email is required.\n                    </div>\n                    <div [hidden]=\"!form.controls['email'].errors.email\">\n                      Its not a valid email (Ex. frey@gmail.com)\n                    </div>\n                  </div>\n                  <input class=\"name\" type=\"text\" formControlName=\"name\" ngModel name=\"name\" [(ngModel)]=\"name\" value=\"{{ name }}\" placeholder=\"Full Name*\">                  \n                  <div class=\"alert\" *ngIf=\"!form.controls['name'].valid && (form.controls['name'].touched)\">\n                    <div [hidden]=\"!form.controls['name'].errors.required\">\n                      Full Name is required.\n                    </div>\n                  </div>\n                  <textarea class=\"message\" type=\"text\" formControlName=\"message\" ngModel name=\"message\" [(ngModel)]=\"message\" value=\"{{ message }}\" placeholder=\"Message*\"></textarea>\n                  <div class=\"alert\" *ngIf=\"!form.controls['message'].valid && (form.controls['message'].touched)\">\n                    <div [hidden]=\"!form.controls['message'].errors.required\">\n                      Message is required.\n                    </div>\n                  </div>\n                  <input class=\"btn-send\" type=\"submit\" value=\"Send\" [disabled]=\"!form.valid\" (click)=\"sendMail()\">\n                  <div class=\"alert\" *ngIf=\"successMsg\">\n                    <div>\n                      <p class=\"success-msg\">Your Message has been sent!</p>\n                    </div>\n                  </div>\n                  <div class=\"alert\" *ngIf=\"failMsg\">\n                    <div>\n                      <p class=\"fail-msg\">Message Failed</p>\n                    </div>\n                  </div>\n                </form>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n\n      <div class=\"section-map\">\n        <div class=\"section-wrapper s-padding\">\n          <iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61619.49162400498!2d120.52444448491856!3d15.146355401543211!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3396f286eed2e61f%3A0x3ded82248ad9b436!2sAngeles%2C+Pampanga!5e0!3m2!1sen!2sph!4v1520347968982\" height=\"500\" frameborder=\"0\" style=\"border: 0; width: 100%;\" allowfullscreen></iframe>\n        </div>\n      </div>\n    </div>\n  </div>\n</main>\n"
 
 /***/ }),
 
@@ -691,6 +691,8 @@ module.exports = "<main class=\"contact-page\">\n  <div class=\"container\">\n  
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContactComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -701,35 +703,41 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var ContactComponent = /** @class */ (function () {
-    function ContactComponent() {
+    function ContactComponent(http, fb) {
+        this.http = http;
+        this.fb = fb;
+        this.form = this.fb.group({
+            email: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["j" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["j" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["j" /* Validators */].email])],
+            name: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["j" /* Validators */].required],
+            message: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["j" /* Validators */].required]
+        });
     }
     ContactComponent.prototype.ngOnInit = function () { };
-    ContactComponent.prototype.test = function () {
-        var transporter = nodemailer.createTransport({
-            service: 'gmail',
-            auth: {
-                type: 'OAuth2',
-                user: 'dev.richardfreyes@gmail.com',
-                clientId: '317997695044-mkuu1tcitpo9d4vvvcbneq4tqt7js9ma.apps.googleusercontent.com',
-                clientSecret: 'SY0-PcF2RehVjVz0Q2icZ0Ez',
-                refreshToken: '1/FFbKQN40_xr7fyvqcNjAOtCyn_OlW6DEYsAmqriwghY',
-                accessToken: 'ya29.GludBbMCzzdw8OC0ChVq3hK4NdmnGDbz3Ydm8StMnaaMfQXAB-dFpSg14VKVdA2ij4w0PRslqGzNch984Wk5Qk7XJC-ZOc4d0SXFFgLZXmJeKNH6d-pdxEZAgu9X'
-            }
-        });
-        var mailOptions = {
-            from: 'FReyes <dev.richardfreyes@gmail.com>',
+    ContactComponent.prototype.sendMail = function (value) {
+        var _this = this;
+        var data = {
             to: 'd102791estiny@gmail.com',
-            subject: 'Nodemailer test',
-            text: 'Hello World!!'
+            subject: this.name,
+            txt: 'Email:' + this.email +
+                'Name:' + this.name +
+                'Message:' + this.message
         };
-        transporter.sendMail(mailOptions, function (err, res) {
-            if (err) {
-                console.log('Error');
-            }
-            else {
-                console.log('Email Sent');
-            }
+        return this.http.post('http://localhost:3000/api/mail/contact', data, { headers: new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set('Content-Type', 'application/json'),
+            responseType: 'text' }).subscribe(function (data) {
+            window.setTimeout(function () {
+                _this.successMsg = true;
+                console.log('Your Message has been sent!');
+                _this.form.reset();
+            }, 2000);
+        }, function (error) {
+            window.setTimeout(function () {
+                _this.failMsg = true;
+                console.log('Failed!');
+                _this.form.reset();
+            }, 2000);
         });
     };
     ContactComponent = __decorate([
@@ -738,7 +746,7 @@ var ContactComponent = /** @class */ (function () {
             template: __webpack_require__("./src/app/components/contact/contact.component.html"),
             styles: [__webpack_require__("./src/app/components/contact/contact.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormBuilder */]])
     ], ContactComponent);
     return ContactComponent;
 }());
