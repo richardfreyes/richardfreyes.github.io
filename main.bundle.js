@@ -727,17 +727,13 @@ var ContactComponent = /** @class */ (function () {
         };
         return this.http.post('localhost:3000/api/mail/contact', data, { headers: new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set('Content-Type', 'application/json'),
             responseType: 'text' }).subscribe(function (data) {
-            window.setTimeout(function () {
-                _this.successMsg = true;
-                console.log('Your Message has been sent!');
-                _this.form.reset();
-            }, 2000);
+            _this.successMsg = true;
+            console.log('Your Message has been sent!');
+            _this.form.reset();
         }, function (error) {
-            window.setTimeout(function () {
-                _this.failMsg = true;
-                console.log('Failed!');
-                _this.form.reset();
-            }, 2000);
+            _this.failMsg = true;
+            console.log('Failed!');
+            _this.form.reset();
         });
     };
     ContactComponent = __decorate([
