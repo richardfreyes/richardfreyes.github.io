@@ -127,6 +127,8 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__components_blog_blog_post_blog_sidenav_blog_sidenav_component__ = __webpack_require__("./src/app/components/blog/blog-post/blog-sidenav/blog-sidenav.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__send_email_send_email_component__ = __webpack_require__("./src/app/send-email/send-email.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29_logrocket__ = __webpack_require__("./node_modules/logrocket/dist/build.umd.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29_logrocket___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_29_logrocket__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -165,6 +167,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+var localHost = document.location.hostname;
+if (localHost != 'localhost') {
+    __WEBPACK_IMPORTED_MODULE_29_logrocket__["init"]('v1yfy5/freyes');
+}
+// This is an example script - don't forget to change it!
+__WEBPACK_IMPORTED_MODULE_29_logrocket__["identify"]('v1yfy5/freyes', {
+    name: 'Visitor',
+    email: 'visitor@example.com',
+});
 var appRoutes = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_13__components_home_home_component__["a" /* HomeComponent */] },
     { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_14__components_profile_profile_component__["a" /* ProfileComponent */] },
@@ -1107,7 +1119,7 @@ var SendEmailComponent = /** @class */ (function () {
     SendEmailComponent.prototype.sendEmail = function () {
         var data = {
             toEmail: 'dev.richardfreyes@gmail.com',
-            toName: 'Jeff Delaney'
+            toName: 'Frey Reyes'
         };
         this.http.post(this.endpoint, data).subscribe();
     };
