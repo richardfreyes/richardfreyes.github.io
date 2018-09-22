@@ -169,8 +169,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 var localHost = document.location.hostname;
-if (localHost != 'localhost') {
+if (localHost == 'richardfreyes.github.io') {
     __WEBPACK_IMPORTED_MODULE_29_logrocket__["init"]('v1yfy5/freyes');
+    console.log("logrocket initialize - TRUE");
+}
+else {
+    console.log("logrocket initialize - FALSE");
 }
 // This is an example script - don't forget to change it!
 __WEBPACK_IMPORTED_MODULE_29_logrocket__["identify"]('v1yfy5/freyes', {
