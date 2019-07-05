@@ -27,7 +27,7 @@ module.exports = ""
 /***/ "./src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<!-- <app-header></app-header> -->\n<ng-progress\n  #progressBar [meteor]=\"options.meteor\"\n  [color]=\"options.color\"\n  [min]=\"options.min\"\n  [speed]=\"options.speed\"\n  [spinner]=\"options.spinner\"\n  [max]=\"options.max\"\n  [spinnerPosition]=\"options.spinnerPosition\"\n  [direction]=\"options.direction\"\n  [thick]=\"options.thick\"\n  [trickleSpeed]=\"options.trickleSpeed\"\n  [ease]=\"options.ease\"\n  (started)=\"onStarted()\"\n  (completed)=\"onCompleted()\">\n</ng-progress>\n<!-- <div class=\"spacer\"></div>\n<p class=\"inprogress\">Note: This Website is inprogress :)</p> -->\n<router-outlet></router-outlet>\n<app-footer></app-footer>\n"
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<!-- <app-header></app-header> -->\n<ng-progress\n  #progressBar [meteor]=\"options.meteor\"\n  [color]=\"options.color\"\n  [min]=\"options.min\"\n  [speed]=\"options.speed\"\n  [spinner]=\"options.spinner\"\n  [max]=\"options.max\"\n  [spinnerPosition]=\"options.spinnerPosition\"\n  [direction]=\"options.direction\"\n  [thick]=\"options.thick\"\n  [trickleSpeed]=\"options.trickleSpeed\"\n  [ease]=\"options.ease\"\n  (started)=\"onStarted()\"\n  (completed)=\"onCompleted()\">\n</ng-progress>\n<!-- <div class=\"spacer\"></div>\n<p class=\"inprogress\">Note: This Website is inprogress :)</p> -->\n<router-outlet></router-outlet>\n<app-footer *ngIf=\"isFooterDisable\"></app-footer>\n"
 
 /***/ }),
 
@@ -37,15 +37,22 @@ module.exports = "<!--The content below is only a placeholder and can be replace
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
 
 var AppComponent = /** @class */ (function () {
-    function AppComponent() {
+    function AppComponent(route) {
+        this.route = route;
+        this.isFooterDisable = true;
         this.title = 'app';
         this.options = {
             min: 8,
@@ -64,26 +71,36 @@ var AppComponent = /** @class */ (function () {
         this.completedClass = false;
         this.preventAbuse = false;
     }
+    AppComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        setTimeout(function () {
+            if (_this.route.navigated) {
+                if (_this.route.url === '/quote') {
+                    _this.isFooterDisable = false;
+                }
+                else {
+                    _this.isFooterDisable = true;
+                }
+            }
+        });
+    };
     AppComponent.prototype.onStarted = function () {
         var _this = this;
         this.startedClass = true;
-        setTimeout(function () {
-            _this.startedClass = false;
-        }, 800);
+        setTimeout(function () { _this.startedClass = false; }, 800);
     };
     AppComponent.prototype.onCompleted = function () {
         var _this = this;
         this.completedClass = true;
-        setTimeout(function () {
-            _this.completedClass = false;
-        }, 800);
+        setTimeout(function () { _this.completedClass = false; }, 800);
     };
     AppComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-root',
             template: __webpack_require__("./src/app/app.component.html"),
             styles: [__webpack_require__("./src/app/app.component.css")]
-        })
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["f" /* Router */]])
     ], AppComponent);
     return AppComponent;
 }());
@@ -129,6 +146,10 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__send_email_send_email_component__ = __webpack_require__("./src/app/send-email/send-email.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29_logrocket__ = __webpack_require__("./node_modules/logrocket/dist/build.umd.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29_logrocket___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_29_logrocket__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__components_pricing_pricing_component__ = __webpack_require__("./src/app/components/pricing/pricing.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__components_quote_quote_component__ = __webpack_require__("./src/app/components/quote/quote.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__components_pricing_inner_pages_psd_html_psd_html_component__ = __webpack_require__("./src/app/components/pricing/inner-pages/psd-html/psd-html.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__components_pricing_inner_pages_cms_ecommerce_cms_ecommerce_component__ = __webpack_require__("./src/app/components/pricing/inner-pages/cms-ecommerce/cms-ecommerce.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -146,6 +167,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 // page loading
+
+
+
+
 
 
 
@@ -189,6 +214,10 @@ var appRoutes = [
     { path: 'blog', component: __WEBPACK_IMPORTED_MODULE_16__components_blog_blog_component__["a" /* BlogComponent */] },
     { path: 'contact', component: __WEBPACK_IMPORTED_MODULE_17__components_contact_contact_component__["a" /* ContactComponent */] },
     { path: 'blog/:slug', component: __WEBPACK_IMPORTED_MODULE_22__components_blog_blog_post_blog_details_blog_details_component__["a" /* BlogDetailsComponent */] },
+    { path: 'freelance-pricing', component: __WEBPACK_IMPORTED_MODULE_30__components_pricing_pricing_component__["a" /* PricingComponent */] },
+    { path: 'freelance-pricing/psd-html', component: __WEBPACK_IMPORTED_MODULE_32__components_pricing_inner_pages_psd_html_psd_html_component__["a" /* PsdHtmlComponent */] },
+    { path: 'freelance-pricing/cms-ecommerce', component: __WEBPACK_IMPORTED_MODULE_33__components_pricing_inner_pages_cms_ecommerce_cms_ecommerce_component__["a" /* CmsEcommerceComponent */] },
+    { path: 'quote', component: __WEBPACK_IMPORTED_MODULE_31__components_quote_quote_component__["a" /* QuoteComponent */] },
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -209,7 +238,11 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_22__components_blog_blog_post_blog_details_blog_details_component__["a" /* BlogDetailsComponent */],
                 __WEBPACK_IMPORTED_MODULE_23__components_blog_blog_post_blog_listing_blog_listing_component__["a" /* BlogListingComponent */],
                 __WEBPACK_IMPORTED_MODULE_27__components_blog_blog_post_blog_sidenav_blog_sidenav_component__["a" /* BlogSidenavComponent */],
-                __WEBPACK_IMPORTED_MODULE_28__send_email_send_email_component__["a" /* SendEmailComponent */]
+                __WEBPACK_IMPORTED_MODULE_28__send_email_send_email_component__["a" /* SendEmailComponent */],
+                __WEBPACK_IMPORTED_MODULE_30__components_pricing_pricing_component__["a" /* PricingComponent */],
+                __WEBPACK_IMPORTED_MODULE_31__components_quote_quote_component__["a" /* QuoteComponent */],
+                __WEBPACK_IMPORTED_MODULE_32__components_pricing_inner_pages_psd_html_psd_html_component__["a" /* PsdHtmlComponent */],
+                __WEBPACK_IMPORTED_MODULE_33__components_pricing_inner_pages_cms_ecommerce_cms_ecommerce_component__["a" /* CmsEcommerceComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -697,7 +730,7 @@ module.exports = ""
 /***/ "./src/app/components/contact/contact.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<main class=\"contact-page\">\n  <div class=\"container\">\n    <div class=\"wrapper\">\n      <header class=\"header\">\n        <div class=\"header-wrapper\">\n          <div class=\"row row-holder contact\">\n            <div class=\"col-9 col-holder p-info-holder\">\n              <div class=\"icon-holder\">\n                <i class=\"fa fa-folder-open-o fa-4x\" aria-hidden=\"true\"></i>\n              </div>\n              <div class=\"label-holder\">\n                <div class=\"inner-holder\">\n                  <h1 class=\"page-title uppercase\">Contact</h1>\n                  <h2 class=\"page-s-title uppercase\">Get in touch with me</h2>\n                </div>\n              </div>\n            </div>\n            <div class=\"col-3 col-holder close-holder\">\n              <a class=\"btn btn-close\" routerLink=\"/\"><span></span></a>\n            </div>\n          </div>\n        </div>\n      </header>\n      <div class=\"section-c-form\">\n        <div class=\"section-wrapper s-padding\">\n          <div class=\"row row-holder\">\n            <div class=\"col-lg-6 col-holder contact-info\">\n              <p class=\"section-title uppercase\">Contact info</p>\n              <div class=\"c-info-holder shadow-book\">\n                <table class=\"info-holder\">\n                  <tr>\n                    <td>Name:</td>\n                    <td>Richard Frey Reyes</td>\n                  </tr>\n                  <tr>\n                    <td>Date of birth:</td>\n                    <td>October 27, 199-</td>\n                  </tr>\n                  <tr>\n                    <td>E-mail:</td>\n                    <td><a href=\"mailto:richardfrey.reyes@gmail.com\">richardfrey.reyes@gmail.com</a></td>\n                  </tr>\n                  <tr>\n                    <td>Address:</td>\n                    <td>Makati City PH</td>\n                  </tr>\n                  <tr>\n                    <td>Phone #:</td>\n                    <td><a href=\"tel:09568555790\">+63956 8555 790</a></td>\n                  </tr>\n                  <tr>\n                    <td>Website:</td>\n                    <td><a href=\"https://richardfreyes.github.io\" target=\"_blank\">richardfreyes.github.io</a></td>\n                  </tr>\n                </table>\n                <ul class=\"social\">\n                  <li class=\"linkedin\"><a href=\"https://linkedin.com/in/richard-frey-reyes-1a92b6117\" target=\"_blank\"><i class=\"fa fa-linkedin\" aria-hidden=\"true\"></i></a></li>\n                  <li class=\"facebook\"><a href=\"https://www.facebook.com/richardfrey.reyes.5\" target=\"_blank\"><i class=\"fa fa-facebook\" aria-hidden=\"true\"></i></a></li>\n                  <li class=\"instagram\"><a href=\"https://www.instagram.com/iiifreyes/\" target=\"_blank\"><i class=\"fa fa-instagram\" aria-hidden=\"true\"></i></a></li>\n                  <li class=\"twitter\"><a href=\"https://twitter.com/d102791estiny\" target=\"_blank\"><i class=\"fa fa-twitter\" aria-hidden=\"true\"></i></a></li>\n                  <li class=\"skype\"><a href=\"https://api.whatsapp.com/send?phone=09568555790\" target=\"_blank\"><i class=\"fa fa-whatsapp\" aria-hidden=\"true\"></i></a></li>\n                </ul>\n              </div>\n            </div>\n            <div class=\"col-lg-6 col-holder contact-form\">\n              <p class=\"section-title uppercase\">Contact form</p>\n              <div class=\"form-holder shadow-book\">\n                <form [formGroup]=\"form\">\n                  <!-- <input formControlName=\"firstName\" [(ngModel)]=\"firstName\"> -->\n                  <input class=\"email\" type=\"email\" formControlName=\"email\" ngModel name=\"email\" [(ngModel)]=\"email\" value=\"{{ email }}\" placeholder=\"Your Email*\">\n                  <div class=\"alert\" *ngIf=\"!form.controls['email'].valid && (form.controls['email'].touched)\">\n                    <div [hidden]=\"!form.controls['email'].errors.required\">\n                      Email is required.\n                    </div>\n                    <div [hidden]=\"!form.controls['email'].errors.email\">\n                      Its not a valid email (Ex. frey@gmail.com)\n                    </div>\n                  </div>\n                  <input class=\"name\" type=\"text\" formControlName=\"name\" ngModel name=\"name\" [(ngModel)]=\"name\" value=\"{{ name }}\" placeholder=\"Full Name*\">                  \n                  <div class=\"alert\" *ngIf=\"!form.controls['name'].valid && (form.controls['name'].touched)\">\n                    <div [hidden]=\"!form.controls['name'].errors.required\">\n                      Full Name is required.\n                    </div>\n                  </div>\n                  <textarea class=\"message\" type=\"text\" formControlName=\"message\" ngModel name=\"message\" [(ngModel)]=\"message\" value=\"{{ message }}\" placeholder=\"Message*\"></textarea>\n                  <div class=\"alert\" *ngIf=\"!form.controls['message'].valid && (form.controls['message'].touched)\">\n                    <div [hidden]=\"!form.controls['message'].errors.required\">\n                      Message is required.\n                    </div>\n                  </div>\n                  <input class=\"btn-send\" type=\"submit\" value=\"Send\" [disabled]=\"!form.valid\" (click)=\"sendMail()\">\n                  <div class=\"alert\" *ngIf=\"successMsg\">\n                    <div>\n                      <p class=\"success-msg\">Your Message has been sent!</p>\n                    </div>\n                  </div>\n                  <div class=\"alert\" *ngIf=\"failMsg\">\n                    <div>\n                      <p class=\"fail-msg\">Message Failed</p>\n                    </div>\n                  </div>\n                </form>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n\n      <div class=\"section-map\">\n        <div class=\"section-wrapper s-padding\">\n          <iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61788.47428794739!2d120.9981702607593!3d14.554590096842803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c90264a0ed01%3A0x2b066ed57830cace!2sMakati%2C+Metro+Manila!5e0!3m2!1sen!2sph!4v1561208758636!5m2!1sen!2sph\" height=\"500\" frameborder=\"0\" style=\"border: 0; width: 100%;\" allowfullscreen></iframe>\n        </div>\n      </div>\n    </div>\n  </div>\n</main>\n"
+module.exports = "<main class=\"contact-page\">\n  <div class=\"container\">\n    <div class=\"wrapper\">\n      <header class=\"header\">\n        <div class=\"header-wrapper\">\n          <div class=\"row row-holder contact\">\n            <div class=\"col-9 col-holder p-info-holder\">\n              <div class=\"icon-holder\">\n                <i class=\"fa fa-folder-open-o fa-4x\" aria-hidden=\"true\"></i>\n              </div>\n              <div class=\"label-holder\">\n                <div class=\"inner-holder\">\n                  <h1 class=\"page-title uppercase\">Contact</h1>\n                  <h2 class=\"page-s-title uppercase\">Get in touch with me</h2>\n                </div>\n              </div>\n            </div>\n            <div class=\"col-3 col-holder close-holder\">\n              <a class=\"btn btn-close\" routerLink=\"/\"><span></span></a>\n            </div>\n          </div>\n        </div>\n      </header>\n      <div class=\"section-c-form\">\n        <div class=\"section-wrapper s-padding\">\n          <div class=\"row row-holder\">\n            <div class=\"col-lg-6 col-holder contact-info\">\n              <p class=\"section-title uppercase\">Contact info</p>\n              <div class=\"c-info-holder shadow-book\">\n                <table class=\"info-holder\">\n                  <tr>\n                    <td>Name:</td>\n                    <td>Richard Frey Reyes</td>\n                  </tr>\n                  <tr>\n                    <td>Date of birth:</td>\n                    <td>October 27, 199-</td>\n                  </tr>\n                  <tr>\n                    <td>E-mail:</td>\n                    <td><a href=\"mailto:richardfrey.reyes@gmail.com\">richardfrey.reyes@gmail.com</a></td>\n                  </tr>\n                  <tr>\n                    <td>Address:</td>\n                    <td>Makati City PH</td>\n                  </tr>\n                  <tr>\n                    <td>Phone #:</td>\n                    <td><a href=\"tel:09568555790\">+63956 8555 790</a></td>\n                  </tr>\n                  <tr>\n                    <td>Website:</td>\n                    <td><a href=\"https://richardfreyes.github.io\" target=\"_blank\">richardfreyes.github.io</a></td>\n                  </tr>\n                </table>\n                <ul class=\"social\">\n                  <li class=\"linkedin\"><a href=\"https://linkedin.com/in/richard-frey-reyes-1a92b6117\" target=\"_blank\"><i class=\"fa fa-linkedin\" aria-hidden=\"true\"></i></a></li>\n                  <li class=\"facebook\"><a href=\"https://www.facebook.com/richardfrey.reyes.5\" target=\"_blank\"><i class=\"fa fa-facebook\" aria-hidden=\"true\"></i></a></li>\n                  <li class=\"instagram\"><a href=\"https://www.instagram.com/iiifreyes/\" target=\"_blank\"><i class=\"fa fa-instagram\" aria-hidden=\"true\"></i></a></li>\n                  <li class=\"twitter\"><a href=\"https://twitter.com/d102791estiny\" target=\"_blank\"><i class=\"fa fa-twitter\" aria-hidden=\"true\"></i></a></li>\n                  <li class=\"skype\"><a href=\"https://api.whatsapp.com/send?phone=09568555790\" target=\"_blank\"><i class=\"fa fa-whatsapp\" aria-hidden=\"true\"></i></a></li>\n                </ul>\n              </div>\n            </div>\n            <div class=\"col-lg-6 col-holder contact-form\">\n              <p class=\"section-title uppercase\">Contact form</p>\n              <div class=\"form-holder shadow-book\">\n                <form [formGroup]=\"form\">\n                  <!-- <input formControlName=\"firstName\" [(ngModel)]=\"firstName\"> -->\n                  <input class=\"email\" type=\"email\" formControlName=\"email\" ngModel name=\"email\" [(ngModel)]=\"email\" value=\"{{ email }}\" placeholder=\"Your Email*\">\n                  <div class=\"alert\" *ngIf=\"!form.controls['email'].valid && (form.controls['email'].touched)\">\n                    <div [hidden]=\"!form.controls['email'].errors.required\">\n                      Email is required.\n                    </div>\n                    <div [hidden]=\"!form.controls['email'].errors.email\">\n                      Its not a valid email (Ex. frey@gmail.com)\n                    </div>\n                  </div>\n                  <input class=\"name\" type=\"text\" formControlName=\"name\" ngModel name=\"name\" [(ngModel)]=\"name\" value=\"{{ name }}\" placeholder=\"Full Name*\">\n                  <div class=\"alert\" *ngIf=\"!form.controls['name'].valid && (form.controls['name'].touched)\">\n                    <div [hidden]=\"!form.controls['name'].errors.required\">\n                      Full Name is required.\n                    </div>\n                  </div>\n                  <textarea class=\"message\" type=\"text\" formControlName=\"message\" ngModel name=\"message\" [(ngModel)]=\"message\" value=\"{{ message }}\" placeholder=\"Message*\"></textarea>\n                  <div class=\"alert\" *ngIf=\"!form.controls['message'].valid && (form.controls['message'].touched)\">\n                    <div [hidden]=\"!form.controls['message'].errors.required\">\n                      Message is required.\n                    </div>\n                  </div>\n                  <input class=\"btn-send\" type=\"submit\" value=\"Send\" [disabled]=\"!form.valid\" (click)=\"sendMail()\">\n                  <div class=\"alert\" *ngIf=\"successMsg\">\n                    <div>\n                      <p class=\"success-msg\">Your Message has been sent!</p>\n                    </div>\n                  </div>\n                  <div class=\"alert\" *ngIf=\"failMsg\">\n                    <div>\n                      <p class=\"fail-msg\">Message Failed: Currently not working.</p>\n                    </div>\n                  </div>\n                </form>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n\n      <div class=\"section-map\">\n        <div class=\"section-wrapper s-padding\">\n          <iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61788.47428794739!2d120.9981702607593!3d14.554590096842803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c90264a0ed01%3A0x2b066ed57830cace!2sMakati%2C+Metro+Manila!5e0!3m2!1sen!2sph!4v1561208758636!5m2!1sen!2sph\" height=\"500\" frameborder=\"0\" style=\"border: 0; width: 100%;\" allowfullscreen></iframe>\n        </div>\n      </div>\n    </div>\n  </div>\n</main>\n"
 
 /***/ }),
 
@@ -877,7 +910,7 @@ module.exports = ""
 /***/ "./src/app/components/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<main class=\"landing-page\">\n  <div class=\"container container-holder\">\n    <div class=\"wrapper\">\n      <div class=\"section-hero\">\n        <div class=\"section-wrapper\">\n          <div class=\"freyes\">\n            <div class=\"img-holder\">\n              <img src=\"assets/images/home/freyes.jpg\" alt=\"\">\n            </div>\n            <div class=\"info-holder\">\n              <div class=\"inner-holder\">\n                <h1 class=\"name uppercase\">Richard Frey Reyes</h1>\n                <h2 class=\"j-position uppercase\">Web Developer / Programmer</h2>\n                <ul class=\"social\">\n                  <li class=\"linkedin\"><a href=\"https://linkedin.com/in/richard-frey-reyes-1a92b6117\" target=\"_blank\"><i class=\"fa fa-linkedin\" aria-hidden=\"true\"></i></a></li>\n                  <li class=\"facebook\"><a href=\"https://www.facebook.com/richardfrey.reyes.5\" target=\"_blank\"><i class=\"fa fa-facebook\" aria-hidden=\"true\"></i></a></li>\n                  <li class=\"instagram\"><a href=\"https://www.instagram.com/iiifreyes/\" target=\"_blank\"><i class=\"fa fa-instagram\" aria-hidden=\"true\"></i></a></li>\n                  <li class=\"twitter\"><a href=\"https://twitter.com/d102791estiny\" target=\"_blank\"><i class=\"fa fa-twitter\" aria-hidden=\"true\"></i></a></li>\n                  <li class=\"skype\"><a href=\"https://api.whatsapp.com/send?phone=09568555790\" target=\"_blank\"><i class=\"fa fa-whatsapp\" aria-hidden=\"true\"></i></a></li>\n                </ul>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div class=\"section-menu\">\n        <div class=\"section-wrapper\">\n          <div class=\"c-row row-holder\">\n            <div class=\"c-col col-holder\">\n              <a routerLink=\"profile\">\n                <div class=\"icon-holder hovicon effect\">\n                  <i class=\"fa fa-user-circle-o fa-4x\" aria-hidden=\"true\"></i>\n                </div>\n                <p class=\"menu-name uppercase\">Profile</p>\n              </a>\n            </div>\n            <div class=\"c-col col-holder\">\n              <a routerLink=\"resume\">\n                <div class=\"icon-holder hovicon effect\">\n                  <i class=\"fa fa-folder-open-o fa-4x\" aria-hidden=\"true\"></i>\n                </div>\n                <p class=\"menu-name uppercase\">Resume</p>\n              </a>\n            </div>\n            <div class=\"c-col col-holder\">\n              <a routerLink=\"portfolio\">\n                <div class=\"icon-holder hovicon effect\">\n                  <i class=\"fa fa-envelope-o fa-4x\" aria-hidden=\"true\"></i>\n                </div>\n                <p class=\"menu-name uppercase\">Portfolio</p>\n              </a>\n            </div>\n            <div class=\"c-col col-holder\">\n              <a routerLink=\"blog\">\n                <div class=\"icon-holder hovicon effect\">\n                  <i class=\"fa fa-file-text-o fa-4x\" aria-hidden=\"true\"></i>\n                </div>\n                <p class=\"menu-name uppercase\">Blog</p>\n              </a>\n            </div>\n            <div class=\"c-col col-holder\">\n              <a routerLink=\"/contact\">\n                <div class=\"icon-holder hovicon effect\">\n                  <i class=\"fa fa-address-card-o fa-4x\" aria-hidden=\"true\"></i>\n                </div>\n                <p class=\"menu-name uppercase\">Contact</p>\n              </a>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</main>\n"
+module.exports = "<main class=\"landing-page\">\n  <div class=\"container container-holder\">\n    <div class=\"wrapper\">\n      <div class=\"section-hero\">\n        <div class=\"section-wrapper\">\n          <div class=\"freyes\">\n            <div class=\"img-holder\">\n              <img src=\"assets/images/home/freyes.jpg\" alt=\"\">\n            </div>\n            <div class=\"info-holder\">\n              <div class=\"inner-holder\">\n                <h1 class=\"name uppercase\">Richard Frey Reyes</h1>\n                <h2 class=\"j-position uppercase\">Web Developer / Programmer</h2>\n                <ul class=\"social\">\n                  <li class=\"linkedin\"><a href=\"https://linkedin.com/in/richard-frey-reyes-1a92b6117\" target=\"_blank\"><i class=\"fa fa-linkedin\" aria-hidden=\"true\"></i></a></li>\n                  <li class=\"facebook\"><a href=\"https://www.facebook.com/richardfrey.reyes.5\" target=\"_blank\"><i class=\"fa fa-facebook\" aria-hidden=\"true\"></i></a></li>\n                  <li class=\"instagram\"><a href=\"https://www.instagram.com/iiifreyes/\" target=\"_blank\"><i class=\"fa fa-instagram\" aria-hidden=\"true\"></i></a></li>\n                  <li class=\"twitter\"><a href=\"https://twitter.com/d102791estiny\" target=\"_blank\"><i class=\"fa fa-twitter\" aria-hidden=\"true\"></i></a></li>\n                  <li class=\"skype\"><a href=\"https://api.whatsapp.com/send?phone=09568555790\" target=\"_blank\"><i class=\"fa fa-whatsapp\" aria-hidden=\"true\"></i></a></li>\n                </ul>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div class=\"section-menu\">\n        <div class=\"section-wrapper\">\n          <div class=\"c-row row-holder\">\n            <div class=\"c-col col col-holder\">\n              <a routerLink=\"profile\">\n                <div class=\"icon-holder hovicon effect\">\n                  <i class=\"fa fa-user-circle-o fa-4x\" aria-hidden=\"true\"></i>\n                </div>\n                <p class=\"menu-name uppercase\">Profile</p>\n              </a>\n            </div>\n            <div class=\"c-col col col-holder\">\n              <a routerLink=\"resume\">\n                <div class=\"icon-holder hovicon effect\">\n                  <i class=\"fa fa-folder-open-o fa-4x\" aria-hidden=\"true\"></i>\n                </div>\n                <p class=\"menu-name uppercase\">Resume</p>\n              </a>\n            </div>\n            <div class=\"c-col col col-holder\">\n              <a routerLink=\"portfolio\">\n                <div class=\"icon-holder hovicon effect\">\n                  <i class=\"fa fa-envelope-o fa-4x\" aria-hidden=\"true\"></i>\n                </div>\n                <p class=\"menu-name uppercase\">Portfolio</p>\n              </a>\n            </div>\n            <div class=\"c-col col col-holder\">\n              <a routerLink=\"blog\">\n                <div class=\"icon-holder hovicon effect\">\n                  <i class=\"fa fa-file-text-o fa-4x\" aria-hidden=\"true\"></i>\n                </div>\n                <p class=\"menu-name uppercase\">Blog</p>\n              </a>\n            </div>\n            <div class=\"c-col col col-holder\">\n              <a routerLink=\"/freelance-pricing\">\n                <div class=\"icon-holder hovicon effect\">\n                  <i class=\"fa fa-code fa-4x\" aria-hidden=\"true\"></i>\n                </div>\n                <p class=\"menu-name uppercase\">My Freelance Pricing</p>\n              </a>\n            </div>  \n            <div class=\"c-col col col-holder\">\n              <a routerLink=\"/contact\">\n                <div class=\"icon-holder hovicon effect\">\n                  <i class=\"fa fa-address-card-o fa-4x\" aria-hidden=\"true\"></i>\n                </div>\n                <p class=\"menu-name uppercase\">Contact</p>\n              </a>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</main>\n"
 
 /***/ }),
 
@@ -976,6 +1009,209 @@ var PortfolioComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/components/pricing/inner-pages/cms-ecommerce/cms-ecommerce.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/pricing/inner-pages/cms-ecommerce/cms-ecommerce.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<main class=\"cms-ecommerce-page\">\n  <div class=\"container\">\n    <div class=\"wrapper\">\n      <header class=\"header\">\n        <div class=\"header-wrapper\">\n          <div class=\"row row-holder cms-ecommerce\">\n            <div class=\"col-9 col-holder p-info-holder\">\n              <div class=\"icon-holder\">\n                <i class=\"fa fa-folder-open-o fa-4x\" aria-hidden=\"true\"></i>\n              </div>\n              <div class=\"label-holder\">\n                <div class=\"inner-holder\">\n                  <h1 class=\"page-title uppercase\">Freelance</h1>\n                  <h2 class=\"page-s-title uppercase\">Simple pricing, no suprises</h2>\n                </div>\n              </div>\n            </div>\n            <div class=\"col-3 col-holder close-holder\">\n              <a class=\"btn btn-close\" routerLink=\"/freelance-pricing\"><span></span></a>\n            </div>\n          </div>\n        </div>\n      </header>\n      <div class=\"section-cms-ecommerce\">\n        <div class=\"section-wrapper s-padding\">\n          <h1 class=\"section-title uppercase\">CMS & E-Commerce Integrations</h1>\n          <div class=\"row row-holder\">\n            <div class=\"col-xs-12 col-md-6 col-holder\">\n              <div class=\"item-wrap\">\n                <p class=\"item-title\">CMS Integration</p>\n                <p class=\"desc\">I develop fully-functional websites based on popular CMS engines, drag-and-drop website builder and cloud-based web development platforms.</p>\n                <ul>\n                  <li>WordPress</li>\n                  <li>Joomla</li>\n                  <li>Drupal</li>\n                  <li>Squarespace</li>\n                </ul>\n                <p class=\"pricing\">From $199</p>\n                <a class=\"btn-default\" routerLink=\"/quote\">Get A Quote</a>\n              </div>\n            </div>\n\n            <div class=\"col-xs-12 col-md-6 col-holder\">\n              <div class=\"item-wrap\">\n                <p class=\"item-title\">E-Commerce Integration</p>\n                <p class=\"desc\">I provide eCommerce integration Services with specialization in Magento and WooCommerce platform and also with third party applications.</p>\n                <ul>\n                  <li>WordPress</li>\n                  <li>Joomla</li>\n                  <li>Drupal</li>\n                  <li>Squarespace</li>\n                </ul>\n                <p class=\"pricing\">From $399</p>\n                <a class=\"btn-default\" routerLink=\"/quote\">Get A Quote</a>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div class=\"section-developers-content\">\n        <div class=\"section-wrapper s-padding\">\n          <div class=\"section-title uppercase\">Built for Developers By Developers</div>\n          <div class=\"row row-holder\">\n            <div class=\"col-lg-4 col-holder\">\n              <div class=\"info text-center\">\n                <div class=\"img-holder\">\n                  <img src=\"../assets/images/freelance-pricing/cms-ecommerce/icon-code.svg\" alt=\"___\"/>\n                </div>\n                <div class=\"description slideanim\">\n                  <h5 class=\"item-title\">Own Coding Standards</h5>\n                  <p class=\"featured-description\">I have built my own coding standards which guarantees the same naming conversion and similar HTML structure every time.</p>\n                </div>\n              </div>\n            </div>\n            <div class=\"col-lg-4 col-holder\">\n              <div class=\"info text-center\">\n                <div class=\"img-holder\">\n                  <img src=\"../assets/images/freelance-pricing/cms-ecommerce/icon-server-installation.svg\" alt=\"___\"/>\n                </div>\n                <div class=\"description slideanim\">\n                  <h5 class=\"item-title\">HTML5 & CSS3</h5>\n                  <p class=\"featured-description\">Valid code, latest technologies, always up-to-date. Compatible with latest desktop and mobile browsers down to IE10*.</p>\n                </div>\n              </div>\n            </div>\n            <div class=\"col-lg-4 col-holder\">\n              <div class=\"info text-center\">\n                <div class=\"img-holder\">\n                  <img src=\"../assets/images/freelance-pricing/cms-ecommerce/icon-existing-site.svg\" alt=\"___\"/>\n                </div>\n                <div class=\"description slideanim\">\n                  <h5 class=\"item-title\">Bootstrap 4</h5>\n                  <p class=\"featured-description\">Built on the worlds most popular framework for building responsive, mobile-first sites.</p>\n                </div>\n              </div>\n            </div>\n            <div class=\"col-lg-4 col-holder\">\n              <div class=\"info text-center\">\n                <div class=\"img-holder\">\n                  <img src=\"../assets/images/freelance-pricing/cms-ecommerce/icon-mobile.svg\" alt=\"___\"/>\n                </div>\n                <div class=\"description slideanim\">\n                  <h5 class=\"item-title\">Retina Ready</h5>\n                  <p class=\"featured-description\">Sharp graphics on Retina and other high-resolution displays. No blurry images anymore!</p>\n                </div>\n              </div>\n            </div>\n            <div class=\"col-lg-4 col-holder\">\n              <div class=\"info text-center\">\n                <div class=\"img-holder\">\n                  <img src=\"../assets/images/freelance-pricing/cms-ecommerce/icon-fast-loading.svg\" alt=\"___\"/>\n                </div>\n                <div class=\"description slideanim\">\n                  <h5 class=\"item-title\">Sass</h5>\n                  <p class=\"featured-description\">Our template is fully based on SASS pre-processor so it is easy to customize and extend.</p>\n                </div>\n              </div>\n            </div>\n            <div class=\"col-lg-4 col-holder\">\n              <div class=\"info text-center\">\n                <div class=\"img-holder\">\n                  <img src=\"../assets/images/freelance-pricing/cms-ecommerce/icon-seo.svg\" alt=\"___\"/>\n                </div>\n                <div class=\"description slideanim\">\n                  <h5 class=\"item-title\">Sass</h5>\n                  <p class=\"featured-description\">BEM (Block, Element, Modifier) methodology is a popular naming convention for classes in HTML and CSS.</p>\n                </div>\n              </div>\n            </div>\n            <div class=\"col-lg-4 col-holder\">\n              <div class=\"info text-center\">\n                <div class=\"img-holder\">\n                  <img src=\"../assets/images/freelance-pricing/cms-ecommerce/icon-retina.svg\" alt=\"___\"/>\n                </div>\n                <div class=\"description slideanim\">\n                  <h5 class=\"item-title\">Touch Friendly</h5>\n                  <p class=\"featured-description\">Easy browsing on touch devices.</p>\n                </div>\n              </div>\n            </div>\n            <div class=\"col-lg-4 col-holder\">\n              <div class=\"info text-center\">\n                <div class=\"img-holder\">\n                  <img src=\"../assets/images/freelance-pricing/cms-ecommerce/icon-multingula-rtl.svg\" alt=\"___\"/>\n                </div>\n                <div class=\"description slideanim\">\n                  <h5 class=\"item-title\">Fully Responsive</h5>\n                  <p class=\"featured-description\">Your pages are fully responsive from small smartphone screens to big desktop monitors.</p>\n                </div>\n              </div>\n            </div>\n            <div class=\"col-lg-4 col-holder\">\n              <div class=\"info text-center\">\n                <div class=\"img-holder\">\n                  <img src=\"../assets/images/freelance-pricing/cms-ecommerce/icon-reliable-support.svg\" alt=\"___\"/>\n                </div>\n                <div class=\"description slideanim\">\n                  <h5 class=\"item-title\">W3C Valid</h5>\n                  <p class=\"featured-description\">100% well-formed markup validated by the World Wide Web Consortium (W3C).</p>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div class=\"section-guarantee\">\n        <div class=\"wrapper\">\n          <img src=\"../assets/images/globals/icon-guarantee.svg\" alt=\"\">\n          <p class=\"guarantee-text\"><strong>My work Quality Guarantee:</strong> If you are not happy with my output, I will rework it for free. I aim for perfection.</p>\n        </div>\n      </div>\n    </div>\n  </div>\n</main>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/pricing/inner-pages/cms-ecommerce/cms-ecommerce.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CmsEcommerceComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var CmsEcommerceComponent = /** @class */ (function () {
+    function CmsEcommerceComponent() {
+    }
+    CmsEcommerceComponent.prototype.ngOnInit = function () {
+    };
+    CmsEcommerceComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-cms-ecommerce',
+            template: __webpack_require__("./src/app/components/pricing/inner-pages/cms-ecommerce/cms-ecommerce.component.html"),
+            styles: [__webpack_require__("./src/app/components/pricing/inner-pages/cms-ecommerce/cms-ecommerce.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], CmsEcommerceComponent);
+    return CmsEcommerceComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/pricing/inner-pages/psd-html/psd-html.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/pricing/inner-pages/psd-html/psd-html.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<main class=\"psd-html-page\">\n  <div class=\"container\">\n    <div class=\"wrapper\">\n      <header class=\"header\">\n        <div class=\"header-wrapper\">\n          <div class=\"row row-holder psd-html\">\n            <div class=\"col-9 col-holder p-info-holder\">\n              <div class=\"icon-holder\">\n                <i class=\"fa fa-folder-open-o fa-4x\" aria-hidden=\"true\"></i>\n              </div>\n              <div class=\"label-holder\">\n                <div class=\"inner-holder\">\n                  <h1 class=\"page-title uppercase\">Freelance</h1>\n                  <h2 class=\"page-s-title uppercase\">Simple pricing, no suprises</h2>\n                </div>\n              </div>\n            </div>\n            <div class=\"col-3 col-holder close-holder\">\n              <a class=\"btn btn-close\" routerLink=\"/freelance-pricing\"><span></span></a>\n            </div>\n          </div>\n        </div>\n      </header>\n      <div class=\"section-psd-html\">\n        <div class=\"section-wrapper s-padding\">\n          <h1 class=\"section-title uppercase\">PSD/Sketch to HTML Conversion Service</h1>\n          <div class=\"row row-eq-height row-holder\">\n            <div class=\"col-xs-12 col-md-6 col-holder\">\n              <div class=\"item-wrap\">\n                <p class=\"item-title\">PSD to HTML Conversion</p>\n                <p class=\"desc\">I convert almost all types of design files (PSD, Sketch, AI, PNG, etc.) into pixel-perfect markup</p>\n                <p class=\"pricing\">$119 / page</p>\n                <p class=\"discount\">50% OFF to all inner page</p>\n                <p class=\"duration\">Delivered in 2-3 Days</p>\n                <a class=\"btn-default\" routerLink=\"/quote\">Get A Quote</a>\n              </div>\n            </div>\n            <div class=\"col-xs-12 col-md-6 col-holder\">\n              <div class=\"item-wrap\">\n                <p class=\"item-title\">PSD to Responsive HTML Conversion</p>\n                <p class=\"desc\">I produce responsive HTML of high quality, organized, well-commented, easy to expand and reusable code</p>\n                <p class=\"pricing\">$179 / page</p>\n                <p class=\"discount\">50% OFF to all inner page</p>\n                <p class=\"duration\">Delivered in 3 days</p>\n                <a class=\"btn-default\" routerLink=\"/quote\">Get A Quote</a>\n              </div>\n            </div>\n            <div class=\"col-xs-12 col-md-6 col-holder\">\n              <div class=\"item-wrap\">\n                <p class=\"item-title\">Email Templates</p>\n                <p class=\"desc\">Convert your designs into responsive email templates and integrate them into Mailchimp or any software you use</p>\n                <p class=\"pricing\">$129 / template</p>\n                <p class=\"discount\">+$49 email software integration</p>\n                <p class=\"duration\">Delivered in 2-3 days</p>\n                <a class=\"btn-default\" routerLink=\"/quote\">Get A Quote</a>\n              </div>\n            </div>\n            <div class=\"col-xs-12 col-md-6 col-holder\">\n              <div class=\"item-wrap\">\n                <p class=\"item-title\">Interactive & Animated Infographics</p>\n                <p class=\"desc\">I develop responsive interactive infographics that look great on desktop, tablet & mobile devices</p>\n                <p class=\"pricing\">$179 / page</p>\n                <p class=\"discount\">+$49 / custom script</p>\n                <p class=\"duration\">Delivered in 3-5 days</p>\n                <a class=\"btn-default\" routerLink=\"/quote\">Get A Quote</a>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div class=\"section-developers-content\">\n        <div class=\"section-wrapper s-padding\">\n          <div class=\"section-title uppercase\">Built for Developers By Developers</div>\n          <div class=\"row row-holder\">\n            <div class=\"col-lg-4 col-holder\">\n              <div class=\"info text-center\">\n                <div class=\"img-holder\">\n                  <img src=\"../assets/images/freelance-pricing/psd-html/icon-code.svg\" alt=\"___\"/>\n                </div>\n                <div class=\"description slideanim\">\n                  <h5 class=\"item-title\">Own Coding Standards</h5>\n                  <p class=\"featured-description\">I have built my own coding standards which guarantees the same naming conversion and similar HTML structure every time.</p>\n                </div>\n              </div>\n            </div>\n            <div class=\"col-lg-4 col-holder\">\n              <div class=\"info text-center\">\n                <div class=\"img-holder\">\n                  <img src=\"../assets/images/freelance-pricing/psd-html/icon-html5.svg\" alt=\"___\"/>\n                </div>\n                <div class=\"description slideanim\">\n                  <h5 class=\"item-title\">HTML5 & CSS3</h5>\n                  <p class=\"featured-description\">Valid code, latest technologies, always up-to-date. Compatible with latest desktop and mobile browsers down to IE10*.</p>\n                </div>\n              </div>\n            </div>\n            <div class=\"col-lg-4 col-holder\">\n              <div class=\"info text-center\">\n                <div class=\"img-holder\">\n                  <img src=\"../assets/images/freelance-pricing/psd-html/icon-bootstrap4.svg\" alt=\"___\"/>\n                </div>\n                <div class=\"description slideanim\">\n                  <h5 class=\"item-title\">Bootstrap 4</h5>\n                  <p class=\"featured-description\">Built on the worlds most popular framework for building responsive, mobile-first sites.</p>\n                </div>\n              </div>\n            </div>\n            <div class=\"col-lg-4 col-holder\">\n              <div class=\"info text-center\">\n                <div class=\"img-holder\">\n                  <img src=\"../assets/images/freelance-pricing/psd-html/icon-retina-ready.svg\" alt=\"___\"/>\n                </div>\n                <div class=\"description slideanim\">\n                  <h5 class=\"item-title\">Retina Ready</h5>\n                  <p class=\"featured-description\">Sharp graphics on Retina and other high-resolution displays. No blurry images anymore!</p>\n                </div>\n              </div>\n            </div>\n            <div class=\"col-lg-4 col-holder\">\n              <div class=\"info text-center\">\n                <div class=\"img-holder\">\n                  <img src=\"../assets/images/freelance-pricing/psd-html/icon-sass.svg\" alt=\"___\"/>\n                </div>\n                <div class=\"description slideanim\">\n                  <h5 class=\"item-title\">Sass</h5>\n                  <p class=\"featured-description\">Our template is fully based on SASS pre-processor so it is easy to customize and extend.</p>\n                </div>\n              </div>\n            </div>\n            <div class=\"col-lg-4 col-holder\">\n              <div class=\"info text-center\">\n                <div class=\"img-holder\">\n                  <img src=\"../assets/images/freelance-pricing/psd-html/icon-bem-methodology.svg\" alt=\"___\"/>\n                </div>\n                <div class=\"description slideanim\">\n                  <h5 class=\"item-title\">Sass</h5>\n                  <p class=\"featured-description\">BEM (Block, Element, Modifier) methodology is a popular naming convention for classes in HTML and CSS.</p>\n                </div>\n              </div>\n            </div>\n            <div class=\"col-lg-4 col-holder\">\n              <div class=\"info text-center\">\n                <div class=\"img-holder\">\n                  <img src=\"../assets/images/freelance-pricing/psd-html/icon-touch-friendly.svg\" alt=\"___\"/>\n                </div>\n                <div class=\"description slideanim\">\n                  <h5 class=\"item-title\">Touch Friendly</h5>\n                  <p class=\"featured-description\">Easy browsing on touch devices.</p>\n                </div>\n              </div>\n            </div>\n            <div class=\"col-lg-4 col-holder\">\n              <div class=\"info text-center\">\n                <div class=\"img-holder\">\n                  <img src=\"../assets/images/freelance-pricing/psd-html/icon-responsive.svg\" alt=\"___\"/>\n                </div>\n                <div class=\"description slideanim\">\n                  <h5 class=\"item-title\">Fully Responsive</h5>\n                  <p class=\"featured-description\">Your pages are fully responsive from small smartphone screens to big desktop monitors.</p>\n                </div>\n              </div>\n            </div>\n            <div class=\"col-lg-4 col-holder\">\n              <div class=\"info text-center\">\n                <div class=\"img-holder\">\n                  <img src=\"../assets/images/freelance-pricing/psd-html/icon-w3c.svg\" alt=\"___\"/>\n                </div>\n                <div class=\"description slideanim\">\n                  <h5 class=\"item-title\">W3C Valid</h5>\n                  <p class=\"featured-description\">100% well-formed markup validated by the World Wide Web Consortium (W3C).</p>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div class=\"section-guarantee\">\n        <div class=\"wrapper\">\n          <img src=\"../assets/images/globals/icon-guarantee.svg\" alt=\"\">\n          <p class=\"guarantee-text\"><strong>My work Quality Guarantee:</strong> If you are not happy with my output, I will rework it for free. I aim for perfection.</p>\n        </div>\n      </div>\n    </div>\n  </div>\n</main>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/pricing/inner-pages/psd-html/psd-html.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PsdHtmlComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var PsdHtmlComponent = /** @class */ (function () {
+    function PsdHtmlComponent() {
+    }
+    PsdHtmlComponent.prototype.ngOnInit = function () {
+    };
+    PsdHtmlComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-psd-html',
+            template: __webpack_require__("./src/app/components/pricing/inner-pages/psd-html/psd-html.component.html"),
+            styles: [__webpack_require__("./src/app/components/pricing/inner-pages/psd-html/psd-html.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], PsdHtmlComponent);
+    return PsdHtmlComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/pricing/pricing.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/pricing/pricing.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<main class=\"pricing-page\">\n  <div class=\"container\">\n    <div class=\"wrapper\">\n      <header class=\"header\">\n        <div class=\"header-wrapper\">\n          <div class=\"row row-holder pricing\">\n            <div class=\"col-9 col-holder p-info-holder\">\n              <div class=\"icon-holder\">\n                <i class=\"fa fa-folder-open-o fa-4x\" aria-hidden=\"true\"></i>\n              </div>\n              <div class=\"label-holder\">\n                <div class=\"inner-holder\">\n                  <h1 class=\"page-title uppercase\">Freelance</h1>\n                  <h2 class=\"page-s-title uppercase\">Simple pricing, no suprises</h2>\n                </div>\n              </div>\n            </div>\n            <div class=\"col-3 col-holder close-holder\">\n              <a class=\"btn btn-close\" routerLink=\"/\"><span></span></a>\n            </div>\n          </div>\n        </div>\n      </header>\n      <div class=\"section-pricing\">\n        <div class=\"section-wrapper s-padding\">\n          <p class=\"section-title uppercase\">Let's Build something amazing together</p>\n          <p>I'm here to develop a meaningful and amazing websites with my clients. Hand coded with the highest quality, created with love.</p>\n          <p>Whether you're looking to improve your current website or completely start fresh from scratch, it's worth a quick conversation to see what I could offer you.</p>\n          <div class=\"content-holder\">\n            <div class=\"row row-holder\">\n              <div class=\"col-12 col-xs-12 col-sm-6 col-lg-4 col-holder\">\n                <div class=\"item-grid\">\n                  <div class=\"img-holder\">\n                    <img src=\"assets/images/freelance-pricing/psd-html.svg\" alt=\"PSD to HTML\">\n                  </div>\n                  <h5 class=\"item-title\">PSD/Sketch to HTML Conversion Service</h5>\n                  <ul class=\"item-info\">\n                    <li class=\"bullets\">PSD/Sketch to HTML Conversion</li>\n                    <li class=\"bullets\">PSD to Bootstrap</li>\n                    <li class=\"bullets\">Interactive & Animated Infographics</li>\n                    <li class=\"bullets\">Email Templates</li>\n                    <li class=\"bullets\">Landing Page Development</li>\n                  </ul>\n                  <h5 class=\"item-price\">From $119</h5>\n                  <div class=\"btn-holder\">\n                    <a [routerLink]=\"['/quote']\" routerLinkActive=\"router-link-active\"  class=\"btn-default\">Get a quote</a>\n                  </div>\n                  <div class=\"btn-holder\">\n                    <a [routerLink]=\"['psd-html']\" class=\"btn-learn\">Learn More</a>\n                  </div>\n                </div>\n              </div>\n\n              <div class=\"col-12 col-xs-12 col-sm-6 col-lg-4 col-holder\">\n                <div class=\"item-grid\">\n                  <div class=\"img-holder\">\n                    <img src=\"assets/images/freelance-pricing/cms-integration.svg\" alt=\"PSD to HTML\">\n                  </div>\n                  <h5 class=\"item-title\">CMS Development, Integration and Customization</h5>\n                  <ul class=\"item-info\">\n                    <li class=\"bullets\">WordPress</li>\n                    <li class=\"bullets\">Joomla</li>\n                    <li class=\"bullets\">Drupal</li>\n                    <li class=\"bullets\">Squarespace</li>\n                  </ul>\n                  <h5 class=\"item-price\">From $119</h5>\n                  <div class=\"btn-holder\">\n                    <a [routerLink]=\"['/quote']\" routerLinkActive=\"router-link-active\"  class=\"btn-default\">Get a quote</a>\n                  </div>\n                  <div class=\"btn-holder\">\n                    <a class=\"btn-learn\" [routerLink]=\"['cms-ecommerce']\" routerLinkActive=\"router-link-active\" >Learn More</a>\n                  </div>\n                </div>\n              </div>\n\n              <div class=\"col-12 col-xs-12 col-sm-6 offset-sm-3 offset-lg-0 col-lg-4 col-holder\">\n                <div class=\"item-grid\">\n                  <div class=\"img-holder\">\n                    <img src=\"assets/images/freelance-pricing/ecommerce.svg\" alt=\"PSD to HTML\">\n                  </div>\n                  <h5 class=\"item-title\">E-Commerce Development, Integration and Customization</h5>\n                  <ul class=\"item-info\">\n                    <li class=\"bullets\">WooCommerce</li>\n                    <li class=\"bullets\">Shopify</li>\n                    <li class=\"bullets\">BigCommerce</li>\n                    <li class=\"bullets\">eBay</li>\n                  </ul>\n                  <h5 class=\"item-price\">From $399</h5>\n                  <div class=\"btn-holder\">\n                    <a [routerLink]=\"['/quote']\" routerLinkActive=\"router-link-active\"  class=\"btn-default\">Get a quote</a>\n                  </div>\n                  <div class=\"btn-holder\">\n                    <a [routerLink]=\"['cms-ecommerce']\" class=\"btn-learn\">Learn More</a>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div class=\"section-hire-me\">\n        <canvas #c id=\"c\"></canvas>\n        <div class=\"container\">\n          <div class=\"section-wrapper\">\n            <p class=\"hire-me-text-1\">I stand behind my works and support my clients</p>\n            <p class=\"hire-me-text-2\">HIRE A FREELANCER WEB DEVELOPER TODAY</p>\n            <a class=\"btn btn-default\" [routerLink]=\"['/quote']\">FIND OUT HOW</a>\n          </div>\n        </div>\n      </div>\n      <div class=\"section-services\">\n        <div class=\"section-wrapper s-padding\">\n          <h2 class=\"section-title text-center slideanim\">I PROVIDE HIGH QUALITY CODE AND MUCH MORE</h2>\n          <div class=\"row row-holder\">\n            <div class=\"col-lg-4 col-holder\">\n              <div class=\"info text-center\">\n                <div class=\"icon slideanim\">\n                  <i class=\"fa fa-html5 fa-2x\" aria-hidden=\"true\"></i>\n                </div>\n                <div class=\"description slideanim\">\n                  <h5 class=\"item-title\">PSD to HTML</h5>\n                  <p class=\"featured-description\">Send your design in any common format (PSD, PNG, AI, etc.) and i will convert it into HTML / CSS with Pixel Perfect meeting the highest industry standard.</p>\n                </div>\n              </div>\n            </div>\n            <div class=\"col-lg-4 col-holder\">\n              <div class=\"info text-center\">\n                <div class=\"icon slideanim\">\n                  <i class=\"fa fa-mobile fa-2x\" aria-hidden=\"true\"></i>\n                </div>\n                <div class=\"description slideanim\">\n                  <h5 class=\"item-title\">Responsive Design</h5>\n                  <p class=\"featured-description\">A responsive design ensures that your website will adapt to each unique device used to access your site. Responsive websites automatically re-size all onsite content, images, and functionalities for mobile, tablet, laptop, and desktop.</p>\n                </div>\n              </div>\n            </div>\n            <div class=\"col-lg-4 col-holder\">\n              <div class=\"info text-center\">\n                <div class=\"icon slideanim\">\n                  <i class=\"fa fa-wordpress fa-2x\" aria-hidden=\"true\"></i>\n                </div>\n                <div class=\"description slideanim\">\n                  <h5 class=\"item-title\">WP Integration</h5>\n                  <p class=\"featured-description\">I will integrate your static website into WordPress. Your website is only as good as you ability to manage it, so i will recommend the most simple and powerful CMS WordPress.</p>\n                </div>\n              </div>\n            </div>\n            <div class=\"col-lg-4 col-holder\">\n              <div class=\"info text-center\">\n                <div class=\"icon slideanim\">\n                  <i class=\"fa fa-file-code-o fa-2x\" aria-hidden=\"true\"></i>\n                </div>\n                <div class=\"description slideanim\">\n                  <h5 class=\"item-title\">CUSTOM THEME DEVELOPMENT</h5>\n                  <p class=\"featured-description\">If you don't have any design for your website, I will provide custom theme base on your specific website needs and business goals.</p>\n                </div>\n              </div>\n            </div>\n            <div class=\"col-lg-4 col-holder\">\n              <div class=\"info text-center\">\n                <div class=\"icon slideanim\">\n                  <i class=\"fa fa-cogs fa-2x\" aria-hidden=\"true\"></i>\n                </div>\n                <div class=\"description slideanim\">\n                  <h5 class=\"item-title\">SECURITY, HOSTING &amp; DOMAIN SUPPORT</h5>\n                  <p class=\"featured-description\">A web hosting service is a type of Internet hosting service that allows individuals and organizations to make youre website accessible via the World Wide Web.</p>\n                </div>\n              </div>\n            </div>\n            <div class=\"col-lg-4 col-holder\">\n              <div class=\"info text-center\">\n                <div class=\"icon slideanim\">\n                  <i class=\"fa fa-wrench fa-2x\" aria-hidden=\"true\"></i>\n                </div>\n                <div class=\"description slideanim\">\n                  <h5 class=\"item-title\">WEBSITE MAINTENANCE</h5>\n                  <p class=\"featured-description\">With regular website maintenance your site will run smoothly. No disgruntled visitors because something on the site didn’t work or a link you provided is broken.</p>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div class=\"section-guarantee\">\n        <div class=\"wrapper\">\n          <img src=\"../assets/images/globals/icon-guarantee.svg\" alt=\"\">\n          <p class=\"guarantee-text\"><strong>My work Quality Guarantee:</strong> If you are not happy with my output, I will rework it for free. I aim for perfection.</p>\n        </div>\n      </div>\n    </div>\n  </div>\n</main>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/pricing/pricing.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PricingComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var PricingComponent = /** @class */ (function () {
+    function PricingComponent() {
+    }
+    PricingComponent.prototype.ngOnInit = function () {
+        console.log('asdasdas', this.c.nativeElement);
+        // matrix
+        // geting canvas by id c
+        var c = this.c;
+        var ctx = c.nativeElement.getContext("2d");
+        //making the canvas full screen
+        c.nativeElement.height = window.innerHeight;
+        c.nativeElement.width = window.innerWidth;
+        //chinese characters - taken from the unicode charset
+        this.matrix = "RICHARDFREYREYES";
+        //converting the string into an array of single characters
+        this.matrix = this.matrix.split("");
+        // console.log('this.matrix A', this.matrix);
+        var font_size = 10;
+        var columns = c.nativeElement.width / font_size; //number of columns for the rain
+        //an array of drops - one per column
+        var drops = [];
+        //x below is the x coordinate
+        //1 = y co-ordinate of the drop(same for every drop initially)
+        for (var x = 0; x < columns; x++)
+            drops[x] = 1;
+        //drawing the characters
+        function draw() {
+            //chinese characters - taken from the unicode charset
+            this.matrix = "RICHARDFREYREYES";
+            //converting the string into an array of single characters
+            this.matrix = this.matrix.split("");
+            //Black BG for the canvas
+            //translucent BG to show trail
+            ctx.fillStyle = "rgba(0, 0, 0, 0.04)";
+            ctx.fillRect(0, 0, c.nativeElement.width, c.nativeElement.height);
+            ctx.fillStyle = "#0F0"; //green text
+            ctx.font = font_size + "px arial";
+            //looping over drops
+            for (var i = 0; i < drops.length; i++) {
+                //a random chinese character to print
+                var text = this.matrix[Math.floor(Math.random() * this.matrix.length)];
+                // console.log('this.matrix B', this.matrix);
+                //x = i*font_size, y = value of drops[i]*font_size
+                ctx.fillText(text, i * font_size, drops[i] * font_size);
+                //sending the drop back to the top randomly after it has crossed the screen
+                //adding a randomness to the reset to make the drops scattered on the Y axis
+                if (drops[i] * font_size > c.nativeElement.height && Math.random() > 0.975)
+                    drops[i] = 0;
+                //incrementing Y coordinate
+                drops[i]++;
+            }
+        }
+        setInterval(draw, 35);
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('c'),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"])
+    ], PricingComponent.prototype, "c", void 0);
+    PricingComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-pricing',
+            template: __webpack_require__("./src/app/components/pricing/pricing.component.html"),
+            styles: [__webpack_require__("./src/app/components/pricing/pricing.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], PricingComponent);
+    return PricingComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/components/profile/profile.component.css":
 /***/ (function(module, exports) {
 
@@ -1027,6 +1263,60 @@ var ProfileComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [])
     ], ProfileComponent);
     return ProfileComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/quote/quote.component.css":
+/***/ (function(module, exports) {
+
+module.exports = "/* app-footer {\r\n    display: none;\r\n} */"
+
+/***/ }),
+
+/***/ "./src/app/components/quote/quote.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<main class=\"quote-page\">\n    <iframe id=\"typeform-full\" width=\"100%\" height=\"100%\" frameborder=\"0\" src=\"https://richardfreyreyes.typeform.com/to/FH5BSO\"></iframe>\n</main>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/quote/quote.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return QuoteComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var QuoteComponent = /** @class */ (function () {
+    function QuoteComponent(route) {
+        this.route = route;
+    }
+    QuoteComponent.prototype.ngOnInit = function () {
+        console.log('this.route', this.route.url);
+    };
+    QuoteComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-quote',
+            template: __webpack_require__("./src/app/components/quote/quote.component.html"),
+            styles: [__webpack_require__("./src/app/components/quote/quote.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["f" /* Router */]])
+    ], QuoteComponent);
+    return QuoteComponent;
 }());
 
 
